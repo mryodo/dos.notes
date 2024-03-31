@@ -27,7 +27,7 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 }
 \ProcessOptions\relax
-\LoadClass[12pt]{article}
+\LoadClass[11pt]{article}
 % ================================= %
 
 
@@ -37,14 +37,14 @@
 
       % e-Mail
       \RequirePackage{authblk}
-      \newcommand*{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}} } 
+      \newcommand*{\email}[1]{\normalsize\href{mailto:#1}{\nolinkurl{#1}} } 
 
       % author and affiliation styling
       \renewcommand*{\Authsep}{ \( \color{black} \bullet \) }
       \renewcommand*{\Authand}{ \( \color{black} \bullet \) }
       \renewcommand*{\Authands}{\( \color{black} \bullet \) }
       \renewcommand*{\Affilfont}{\small\normalfont\it\color{black}}
-      \renewcommand*{\Authfont}{\bfseries\color{persimmon}}    % make author names boldface    
+      \renewcommand*{\Authfont}{\bfseries\color{rwth-blue}}    % make author names boldface    
       \setlength{\affilsep}{0.2em}  
 
       % Abstract definition
@@ -122,10 +122,15 @@
       %\usepackage[T1]{fontenc}     
       %\usepackage{lmodern,mathrsfs}
       \usepackage{cmbright}
-      \usepackage{nunito}
+      \usepackage{fontspec}
+      \setmainfont[Scale=1.0]{Poppins ExtraLight}
+      \setsansfont[ BoldFont={Poppins Medium}, 
+       ItalicFont={Poppins ExtraLight Italic},
+       BoldItalicFont={Poppins Medium Italic}]{Poppins ExtraLight}
+      %\usepackage{nunito}
       %\usepackage{lato}
-      \renewcommand{\mddefault}{l}
-      \renewcommand{\bfdefault}{b}
+      %\renewcommand{\mddefault}{l}
+      %\renewcommand{\bfdefault}{b}
       %\usepackage[normalweight=Light]{mdsymbol}
 
       \makeatletter
@@ -151,12 +156,17 @@
       \definecolor{newteal}{rgb}{ 0.6039215686274509, 0.8, 0.7686274509803922,}
       \definecolor{newpeach}{rgb}{0.9725490196078431, 0.7411764705882353, 0.5882352941176471}
       \definecolor{newflam}{rgb}{0.9490196078431372, 0.803921568627451, 0.803921568627451}
-      \definecolor{persimmon}{HTML}{DE5A02}
+      \definecolor{rwth-blue}{HTML}{DE5A02}
       \definecolor{jet}{HTML}{333232}
       \definecolor{peach}{HTML}{FCDE9C}
       \definecolor{cerulean}{HTML}{A7C6DA}
       \definecolor{liberty}{HTML}{5158BB}
       \definecolor{greensheen}{HTML}{68B0AB}
+
+      \input{rwth-color.sty}
+
+
+
 % =========== Colors ============== %
 % ================================= %
 
@@ -170,8 +180,8 @@
 \settowidth{\spacelength}{\normalfont\,}
 
       \declaretheoremstyle[
-      headfont={\color{black4} \small},
-      notefont={\normalfont \color{black4} \bfseries},
+      headfont={\color{jet} \small},
+      notefont={\normalfont \color{jet} \bfseries},
       bodyfont={\normalfont},
       headpunct={\relax},%\newline,
       headformat={%
@@ -181,9 +191,9 @@
       \tcolorboxenvironment{theorem}{
       boxrule=0pt,
       boxsep=0pt,
-      colback={white!50!newpeach},
+      colback={white!50!rwth-magenta},
       enhanced jigsaw, 
-      borderline west={3pt}{0pt}{newpeach},
+      borderline west={3pt}{0pt}{rwth-mag enta},
       sharp corners,
       before skip=10pt,
       after skip=10pt,
@@ -198,9 +208,9 @@
       \tcolorboxenvironment{thm}{
       boxrule=0pt,
       boxsep=0pt,
-      colback={white!70!persimmon},
+      colback={white!70!rwth-blue},
       enhanced jigsaw, 
-      borderline west={3pt}{0pt}{persimmon},
+      borderline west={3pt}{0pt}{rwth-blue},
       sharp corners,
       before skip=10pt,
       after skip=10pt,
@@ -217,7 +227,7 @@
       \let\proof\relax
       \let\endproof\relax
       \declaretheoremstyle[
-      headfont={\color{black4} \small},
+      headfont={\color{jet} \small},
       notefont={\normalfont},
       bodyfont={\normalfont},
       headpunct={\relax},
@@ -229,7 +239,7 @@
       boxrule=0pt,
       boxsep=0pt,
       blanker,
-      borderline west={3pt}{0pt}{greensheen},
+      borderline west={3pt}{0pt}{rwth-petrol},
       before skip=10pt,
       after skip=10pt,
       left=5pt,
@@ -241,7 +251,7 @@
 
 
       \declaretheoremstyle[
-      headfont={\color{black4} \small},
+      headfont={\color{jet} \small},
       notefont={\normalfont},
       bodyfont={\normalfont},
       headpunct={\relax},
@@ -253,7 +263,7 @@
       boxrule=0pt,
       boxsep=0pt,
       blanker,
-      borderline west={3pt}{0pt}{newteal},
+      borderline west={3pt}{0pt}{rwth-orange},
       before skip=10pt,
       after skip=10pt,
       left=5pt,
@@ -264,7 +274,7 @@
       \declaretheorem[style=corollary]{Corollary}
 
       \declaretheoremstyle[
-      headfont={\color{black4} \itshape},
+      headfont={\color{jet} \itshape},
       notefont={\normalfont},
       bodyfont={\normalfont},
       headpunct={\relax},
@@ -284,7 +294,7 @@
       boxrule=0pt,
       boxsep=0pt,
       blanker,
-      borderline west={3pt}{0pt}{black4},
+      borderline west={3pt}{0pt}{jet},
       sharp corners,
       before skip=10pt,
       after skip=10pt,
@@ -299,9 +309,9 @@
       \tcolorboxenvironment{definition}{
       boxrule=0pt,
       boxsep=0pt,
-      colback={white!70!liberty},
+      colback={white!70!rwth-turquoise},
       enhanced jigsaw, 
-      borderline west={3pt}{0pt}{liberty},
+      borderline west={3pt}{0pt}{rwth-turquoise},
       sharp corners,
       before skip=10pt,
       after skip=10pt,
@@ -317,7 +327,7 @@
       boxrule=0pt,
       boxsep=0pt,
       blanker,
-      borderline west={3pt}{0pt}{newred},
+      borderline west={3pt}{0pt}{rwth-bordeaux},
       before skip=10pt,
       after skip=10pt,
       sharp corners,
@@ -371,7 +381,7 @@
       boxrule=0pt,
       boxsep=0pt,
       blanker,
-      borderline west={3pt}{0pt}{newteal},
+      borderline west={3pt}{0pt}{rwth-green},
       sharp corners,
       before skip=10pt,
       after skip=10pt,
@@ -394,19 +404,19 @@
 \newtcolorbox{story}[1][]{
   width=0.35\textwidth,
   breakable,
-  colframe=persimmon,
-  colback=persimmon!10
+  colframe=rwth-blue,
+  colback=rwth-blue!10
   #1
 }
 
-      \renewcommand*{\raggedleftmarginnote}{{\color{black4} \noindent}}
-      \renewcommand*{\raggedrightmarginnote}{{\color{black4} \noindent}}
-      \newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\begin{story} \color{black4} \textsuperscript{\thesidenote}{}\itshape{\setstretch{0.5}\footnotesize #1 }\end{story}\refstepcounter{sidenote}}}
+      \renewcommand*{\raggedleftmarginnote}{{\color{jet} \noindent}}
+      \renewcommand*{\raggedrightmarginnote}{{\color{jet} \noindent}}
+      \newcommand{\mn}[1]{\textsuperscript{\thesidenote}{}\marginnote{\begin{story} \color{jet} \textsuperscript{\thesidenote}{}\itshape{\setstretch{0.5}\footnotesize #1 }\end{story}\refstepcounter{sidenote}}}
       \newcommand{\en}[1]{\marginnote{\footnotesize{#1}}}
       \newcommand{\lec}[2]{{\setlength{\marginparwidth}{.07\paperwidth}\reversemarginpar\marginnote{\centering\footnotesize{\textsf{\bfseries #1}}\\#2}}}
       \newcommand{\sn}[1]{\sidenote{\itshape\footnotesize #1}}
-      \newcommand{\mnl}[1]{\textsuperscript{\thesidenote}{}\marginnote{\color{black4} \begin{story}\textsuperscript{\thesidenote}{} #1\end{story}}\refstepcounter{sidenote}}
-      \newcommand{\mnln}[1]{\marginnote{\color{black4}  \begin{story}#1\end{story}}\refstepcounter{sidenote}}
+      \newcommand{\mnl}[1]{\textsuperscript{\thesidenote}{}\marginnote{\color{jet} \begin{story}\textsuperscript{\thesidenote}{} #1\end{story}}\refstepcounter{sidenote}}
+      \newcommand{\mnln}[1]{\marginnote{\color{jet}  \begin{story}#1\end{story}}\refstepcounter{sidenote}}
 % ============ Margins ============ %
 % ================================= %
 
@@ -454,7 +464,7 @@
             height = 0.9cm,
             enhanced,
             colback=jet,
-            colframe=persimmon,
+            colframe=rwth-blue,
             boxrule=0pt,
             leftrule=2.5cm,
             enlarge left by=-2.0cm-\@totalleftmargin,
@@ -475,7 +485,7 @@
             height = 0.9cm,
             enhanced,
             colback=jet,
-            colframe=persimmon,
+            colframe=rwth-blue,
             boxrule=0pt,
             leftrule=2.5cm,
             enlarge left by=-1.5cm-\@totalleftmargin,
@@ -493,11 +503,11 @@
       \newtcolorbox{mybox2}[2][]{%
       enhanced,
       colback=white,
-      colframe=persimmon,
+      colframe=rwth-blue,
       boxrule=0pt,
       leftrule=0cm,
       enhanced jigsaw, 
-      borderline west={3pt}{0pt}{persimmon},
+      borderline west={3pt}{0pt}{rwth-blue},
       height=0.75cm, 
 }
 
@@ -505,7 +515,9 @@
       {}
       {}
       {0pt}
-      {\colorsection}
+      {
+      \colorsection
+      }
       %\titlespacing*{\section}{-2.5cm}{-0.5\baselineskip}{-1.25\baselineskip}
       \titlespacing*{\section}{-0.5cm}{-0.5\baselineskip}{-1.25\baselineskip}
 
@@ -515,9 +527,11 @@
      %       \end{mybox}
      % }
      \newcommand{\colorsection}[1]{%
+     \setlength{\parskip}{0pt}
      \begin{mybox2}{\thesection}
            \vspace{-2pt}\color{black}\bfseries \thesection.~#1
       \end{mybox2}
+      \setlength{\parskip}{7pt}
       }
 
       %\titleformat{name=\chapter}[block]
@@ -548,7 +562,7 @@
 
 
       \newcommand{\colorsubsection}[1]{%
-                  \color{persimmon}\bfseries \thesubsection \; #1
+                  \color{rwth-blue}\bfseries \thesubsection \; #1
       }
 
       \titleformat{name=\subsubsection}[block]
@@ -560,7 +574,7 @@
 
 
       \newcommand{\colorsubsubsection}[1]{%
-                  \color{persimmon}\bfseries \thesubsubsection \; #1
+                  \color{rwth-blue}\bfseries \thesubsubsection \; #1
       }
 
       \renewcommand{\thesection}{\Roman{section}} 
@@ -568,7 +582,7 @@
       \renewcommand{\thesubsubsection}{\thesubsection.\Roman{subsubsection}}
 
 
-      \RequirePackage[font={small}, figurename=Figure, labelfont={bf,color=persimmon}]{caption}
+      \RequirePackage[font={small}, figurename=Figure, labelfont={bf,color=rwth-blue}]{caption}
 
 % ============ Sections =========== %
 % ================================= %
@@ -582,22 +596,22 @@
 
 
 \RequirePackage[colorlinks=true
-,urlcolor=liberty
-,anchorcolor=liberty
-,citecolor=liberty
-,filecolor=liberty
-,linkcolor=liberty
-,menucolor=liberty
+,urlcolor=rwth-purple
+,anchorcolor=rwth-purple
+,citecolor=rwth-purple
+,filecolor=rwth-purple
+,linkcolor=rwth-purple
+,menucolor=rwth-purple
 ,linktocpage=true,
       breaklinks,
   linktoc=section,
-  linkcolor=liberty,
-  linkbordercolor=white,
-  citecolor=liberty,
-  urlcolor=liberty,
+  linkcolor=rwth-purple,
+  linkbordercolor=rwth-purple,
+  citecolor=rwth-purple,
+  urlcolor=rwth-purple,
 ]{hyperref}
 \RequirePackage[capitalize, nameinlink]{cleveref}
-\crefdefaultlabelformat{\color{liberty}#1#2#3}
+\crefdefaultlabelformat{\color{rwth-purple}#1#2#3}
 
 \crefname{thm}{theorem}{theorems}
 \crefname{section}{section}{sections}
@@ -624,7 +638,7 @@
 
 \makeatletter
 \def\formatout#1{\hbox{\hskip1sp\m@th\llap{%
-    \normalcolor\small \color{jet!50!white}(Eqn.~#1) \hspace{0cm}}}}
+    \normalcolor\small \color{jet!50!white}(Eqn.~#1) \hspace{-1.5cm}}}}
 \let\oldmaketag@@@\maketag@@@
 \def\oldtagform@#1{\oldmaketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
 \renewcommand{\eqref}[1]{\textup{\oldtagform@{\ref{#1}}}}
@@ -661,10 +675,11 @@
 
  \newtcolorbox{tmp}[1][]{
       enhanced,breakable,colframe=jet!50!white,
-      colbacktitle=jet!15!white,
+      colbacktitle=jet!25!white,
+      colback=jet!7!white,
       coltitle=jet,
-      colback = white,
-      borderline={0.5mm}{0mm}{jet!15!white},
+      %colback = white,
+      borderline={0.5mm}{0mm}{jet!7!white},
       borderline={0.5mm}{0mm}{jet!50!white,dashed},
       attach boxed title to top center={yshift=-2mm},
       boxed title style={boxrule=0.4pt},
@@ -678,14 +693,14 @@
 
 
 \usepackage[
-      color=persimmon!10!white,
-      bordercolor=persimmon,
-      linecolor = persimmon,
+      color=rwth-blue!10!white,
+      bordercolor=rwth-blue,
+      linecolor = rwth-blue,
       textwidth = 0.3\columnwidth,
 ]{todonotes}
 
 \let\emph\relax % there's no \RedeclareTextFontCommand
-\DeclareTextFontCommand{\emph}{\bfseries\color{greensheen}}
+\DeclareTextFontCommand{\emph}{\bfseries\color{rwth-magenta}}
 
 \usetikzlibrary{calc}
 

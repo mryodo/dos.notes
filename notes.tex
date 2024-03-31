@@ -1,19 +1,49 @@
 \documentclass{mynotes}
 
 
-\title{Misconceptions of Balance amongst the General Population of Force Users }
+\title{Density of States of Hodge Laplacians: Decomposition effects and Sparsification of SC}
 
-\author[1]{ Qui-Gon Jinn }
+\author[1]{ Tony Savostianov }
 
-\affil[1]{ Unknown, River-of-Light,   \\ email: \email{qui-gon.jinn@gho.st} }
+\affil[1]{ RWTH, Aachen   \\ email: \email{a.s.savostyanov@gmail.com} }
+
+\input{shortcuts.tex}
 
 \begin{document}
-
-
 
 \maketitle
 
 
+\chapter{Sparsification of Simplicial Complex}
+
+Let \( \mc K \) be a simplicial complex with the unit weights of \( \V 1 \), \( W_1 = I \). Then \( \Lu 1 = B_2 W_2^2 B_2^\top \) and the \emph{generalized effective resistance} is given by 
+\begin{equation}
+      \b r = \diag \left( B_2^\top \left( \Lu 1 \right)^+ B_2 \right) = \diag \left( B_2^\top \left( B_2 W_2^2 B_2^\top \right)^+ B_2 \right)
+\end{equation}
+then the sparsifying measure is defined as \( \b p \sim \diag \left( W_2^2 \b r  \right)\) (let us temporary believe that this is correct and we do not need to touch it).
+
+\begin{remark}[on the weird-weird-weird matrix inside \( \b r \)]
+      Let us take a further look at GER above. Let SVD 
+      \( B_2 W_2 = U S V^\top\); then 
+      \begin{equation}
+            \left( B_2 W_2^2 B_2^\top \right)^+ = U S^+ U^\top 
+      \end{equation}
+      and \( B_2 = U S V^\top W_2^{-1} \). As a result, 
+      \begin{equation}
+            B_2^\top \left( B_2 W_2^2 B_2^\top \right)^+ B_2 = W_2^{-\top} V S S^+ S V^\top W_2^{-1} = W_2^{-1} V S V^\top W_2^{-1} 
+      \end{equation}
+      Note that \( V S V^\top = W_2 B_2^\top B_2 W_2 = \Ld 3 \). Hence,
+      \begin{equation}
+            \b r = \diag \left( B_2^\top B_2 \right) = 3 \b 1
+      \end{equation}
+      Okay, something is definitely broken\dots
+\end{remark}
+
+
+
+
+
+\clearpage
 %% BIBLIOGRAPHY %% 
 \nocite{*}
 \bibliographystyle{alpha}
