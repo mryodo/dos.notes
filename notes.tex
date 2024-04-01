@@ -26,17 +26,20 @@ then the sparsifying measure is defined as \( \b p \sim \diag \left( W_2^2 \b r 
       Let us take a further look at GER above. Let SVD 
       \( B_2 W_2 = U S V^\top\); then 
       \begin{equation}
-            \left( B_2 W_2^2 B_2^\top \right)^+ = U S^+ U^\top 
+            \left( B_2 W_2^2 B_2^\top \right)^+ = U S^{+2} U^\top 
       \end{equation}
       and \( B_2 = U S V^\top W_2^{-1} \). As a result, 
       \begin{equation}
-            B_2^\top \left( B_2 W_2^2 B_2^\top \right)^+ B_2 = W_2^{-\top} V S S^+ S V^\top W_2^{-1} = W_2^{-1} V S V^\top W_2^{-1} 
+            B_2^\top \left( B_2 W_2^2 B_2^\top \right)^+ B_2 = W_2^{-\top} V S S^{+2} S V^\top W_2^{-1} 
       \end{equation}
-      Note that \( V S V^\top = W_2 B_2^\top B_2 W_2 = \Ld 3 \). Hence,
+      Since \( S \) and \( S^+ \) are diagonal, any permutations of \( S S^{+2} S \) are allowed. Then \( S S^{+2} S = S S^+ \). As a result for GER: 
       \begin{equation}
-            \b r = \diag \left( B_2^\top B_2 \right) = 3 \b 1
+            \begin{aligned}
+                  \b r & = \diag( X X^\top ) \\
+                  \text{where } X & = W_2^{-1} V S S^+ = W_2^{-1} V \Pi = W_2^{-1} V_1 
+            \end{aligned}
       \end{equation}
-      Okay, something is definitely broken\dots
+      where \( V_1 \) is the orthonormal basis of \( \im B_2^\top \).
 \end{remark}
 
 
