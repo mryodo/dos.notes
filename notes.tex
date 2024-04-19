@@ -25,6 +25,114 @@ You know, somewhere here, maybe\dots
 
 \chapter{ Simplicial complexes }
 
+A \emph{simplicial complex} \( \mc K \) on the vertices \( \{ v_1, v_2 \ldots v_n \} \) is a collection of simplices \( \sigma \), sets of nodes with the property that all the subsets of $\sigma$ are simplicies of $\mc K$ too.   
+We refer to a simplex made out of $k$ nodes \( \sigma = [ v_{i_1}, \ldots v_{i_{k+1}} ] \) as being of order \( k \), and write \( \dim \sigma = k \); the set of all the simplices of order \( k \) in the complex \( \mc K \) is denoted by \( \V k \). Thus, \( \V 0 \) are the vertices of $\mc K$, \( \V 1 \) are edges between pairs of vertices, \( \V 2 \) triangles connecting three vertices, and so on. We let \( m_k = | \V k | \) denote the cardinality of \( \V k\).
+
+Each set of simplices \( \V k = \left\{ \sigma_1, \dots \sigma_{ m_k } \right\} \) induces a linear space of formal sums over the simplicies \( C_k (\mc K) = \left\{  \sum_{i=1}^{ m_k } \alpha_i \sigma_i  \mid \alpha_i \in \ds R \right\} \) referred to as \textit{chain space}; in particular,  \( C_0 ( \mc K ) \) is known as the space of vertex states and \( C_1 ( \mc K ) \) as the space of edge flows. Simplices of different orders are related through the boundaries operators \( \partial_k \) mapping the simplex to its boundary; formally, \( \partial_k : C_k ( \mc K ) \mapsto C_{k-1} ( \mc K ) \) is defined through the alternating sum:
+\begin{equation*}
+      \partial_k [ v_1, v_2, \ldots v_k ] = \sum_{i=1}^k (-1)^{i-1} [ v_1, \ldots v_{i-1}, v_{i+1}, \ldots v_k ] 
+\end{equation*} 
+By fixing an ordering for \( \V k \) we can fix a canonical basis for \( C_k(\mc K)\) and represent each boundary operator as a matrix  \( B_k \in \mathrm{Mat}_{ m_{k-1} \times m_k } \) with exactly $k$ nonzero entries per each column, being either $+1$ or $-1$. For these matrices, the fundamental property of topology holds: \textit{the boundary of the boundary is zero}, {\cite[Thm.~5.7]{Lim15}}:
+\begin{equation}
+      \label{eq:bkbk1}
+      B_k B_{k+1} = 0 
+\end{equation}
+The matrix representation $B_k$ of the boundary operator \( \partial_k \) requires fixing an ordering of the simplices in $\V k$ and $\V{k-1}$. As it will be particularly relevant for the purpose of this work, we emphasize that we order triangles and edges as follows: triangles in \( \V 2 \) are oriented in such a way that the first edge (in terms of the ordering of \( \V 1 \)) in each triangle is positively acted upon by $B_2$, i.e.\ the first non-zero entry in each column of \(B_2 \) is \( +1 \), \Cref{fig:orientation}. 
+
+\begin{figure}[hbtp]
+      \centering
+      \begin{tikzpicture}
+            \begin{scope}[shift={(-0.75, 0)}]
+            \draw[fill = liberty, opacity = 0.4] (0,0) -- (1.5,0) -- (0.75, -1.5*3/4) -- cycle; 
+            \draw[fill = liberty, opacity = 0.6] (0,0) -- (1.5,0) -- (0.75, 1.5*3/4) -- cycle; 
+
+            \Vertex[x=0, y=0, label = 1, style={color = persimmon}, fontcolor = white, size = 0.4 ]{v1}
+            \Vertex[x=1.5, y=0, label = 3, style={color = persimmon}, fontcolor = white, size = 0.4 ]{v2}
+            \Vertex[x=0.75, y=-1.5*3/4, label = 2, style={color = persimmon}, fontcolor = white, size = 0.4 ]{v3}
+            \Vertex[x=0.75, y=1.5*3/4, label = 4, style={color = persimmon}, fontcolor = white, size = 0.4 ]{v4}
+            \Edge[Direct](v1)(v2)
+            \Edge[Direct](v1)(v3)
+            \Edge[Direct](v1)(v4)
+            \Edge[Direct](v3)(v2)
+            \Edge[Direct](v2)(v4)
+            \node at (0.75, 1.5*3/4*1/3 ) { \AxisRotator[rotate=0] };
+            \node at (0.75, -1.5*3/4*1/3 ) { \AxisRotator[rotate=-60] };
+            \end{scope}
+
+            \Vertex[x=2.5, y=1.5*3/4, label = 1, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t1}
+            \Vertex[x=4, y=1.5*3/4, label = 2, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t2}
+            \Vertex[x=2.5, y=0.9*3/4, label = 1, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t3}
+            \Vertex[x=4, y=0.9*3/4, label = 3, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t4}
+            \Vertex[x=2.5, y=0.3*3/4, label = 1, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t5}
+            \Vertex[x=4, y=0.3*3/4, label = 4, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t6}
+            \Vertex[x=2.5, y=-0.3*3/4, label = 2, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t7}
+            \Vertex[x=4, y=-0.3*3/4, label = 3, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t8}
+            \Vertex[x=2.5, y=-0.9*3/4, label = 3, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t9}
+            \Vertex[x=4, y=-0.9*3/4, label = 4, style={color = persimmon}, fontcolor = white, size = 0.4 ]{t10}
+            \Edge[Direct](t1)(t2)
+            \Edge[Direct](t3)(t4)
+            \Edge[Direct](t5)(t6)
+            \Edge[Direct](t7)(t8)
+            \Edge[Direct](t9)(t10)
+
+            \draw[->, line width = 1.0] (2.1, 1.9*3/4)--(2.1, -1.5*3/4);
+            \draw[->, line width = 1.0] (2.1, 1.9*3/4)--(4.4, 1.9*3/4);
+            \node[ anchor=south ] at ( 3.25, 1.9*3/4 ) { \small orientation };
+            \node[ anchor = south, rotate = 90 ] at (2.1, 0.2*3/4 ) { \small ordering };
+
+            \node[] at ( 8.25, 1.0 ) { \( B_2 \textcolor{liberty}{[1, 2, 3 ]} = \overbrace{\textcolor{red}{(+1)} [1, 2]}^{\substack{\text{1st in}\\\text{order}}} + (-1) [1, 3] + (+1) [2, 3] \) };
+            \node[] at ( 8.25, -0.4 ) { \( B_2 \textcolor{liberty}{[1, 3, 4 ]} = \underbrace{\textcolor{red}{(+1)} [1, 3]}_{\substack{\text{1st in}\\\text{order}}} + (-1) [1, 4] + (+1) [3, 4] \) };  
+      \end{tikzpicture}
+      \caption{ Example of the simplicial complex with ordering and orientation: nodes from \( \V 0 \) in orange, triangles from \( \V 2 \) in blue. Orientation of edges and triangles is shown by arrows; the action of \( B_2 \) operator is given for both triangles.\label{fig:orientation}}
+\end{figure}
+
+
+The following definitions introduce the fundamental concepts of $k$-th homology group and $k$-th order Laplacian.  See \cite{Lim15} e.g.\ for more details. 
+
+\begin{definition}[Homology group and higher-order Laplacian]
+      Since \( \im B_{k+1} \subset \ker B_k \), the quotient space \( \mc H_k =  \sfrac{ \ker B_k }{ \im B_{k+1}} \), known as \( k\)-th homology group, is correctly defined and the following isomorphisms hold 
+    \begin{equation*}
+            \mc H_k \cong \ker B_k \cap \ker B_{k+1}^\top \cong \ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right).
+      \end{equation*}
+
+      The matrix \( L_k = B_k^\top B_k + B_{k+1} B_{k+1}^\top \) is called the \(k\)-th order \emph{Laplacian operator}; the two terms \( \Ld k =  B_k^\top B_k \) and \( \Lu k = B_{k+1} B_{k+1}^\top \) are referred to as the \emph{down-Laplacian} and the \emph{up-Laplacian}, respectively.
+\end{definition}
+
+The homology group \( \mc H_k \) describes the \(k\)-th topology of the simplicial complex \( \mc K \): \( \beta_k = \dim \mc H_k = \dim \ker L_k \)  coincides exactly with the number of \(k\)-dimensional holes in the complex, known as the \emph{ \(k\)-th Betti number}. In the case \( k = 0 \), the operator \( L_0 = \Lu 0\) is exactly the classical graph Laplacian whose kernel corresponds to the \textit{connected components} of the graph, while \( \Ld 0  = 0 \). For \( k = 1 \) and \( k = 2\), the elements of \( \ker L_1 \) and \( \ker L_2\) describe the simplex 1-dimensional holes and voids respectively, and are frequently used in the analysis of trajectory data,~\cite{schaub2019random,benson2016higher}.
+
+
+Although more frequently found in their purely combinatorial form, the definitions of simplicial complexes, homology groups, and higher-order Laplacians admit a generalization to the weighted case. For the sake of generality, in the rest of the work, we use the following notion of weighted boundary operators (and thus weighted simplicial complexes), as considered in e.g.~\cite{guglielmi2023quantifying}.
+
+\begin{definition}[Weighted and normalised boundary matrices]
+       For \textit{weight functions} \( w_k : \V k \mapsto \ds R_+ \cup \{ 0 \} \), define the diagonal weight matrix \( W_k \in \mathrm{Mat}_{ m_k \times m_k } \) as  \( (W_k)_{ii} = \sqrt{w_k(\sigma_i)}\). Then the  weighting scheme for the boundary operators upholding the Hodge algebras~\eqref{eq:bkbk1} is given by:
+      \begin{equation}
+            \label{eq:weighting}
+            B_k \mapsto W_{k-1}^{-1} B_k W_k
+      \end{equation}
+\end{definition}
+
+Note that, with the weighting scheme \Cref{eq:weighting}, the dimensionality of the homology group is preserved, \( \dim \ker L_k = \dim \ker \widehat L_k \),~\cite{guglielmi2023quantifying} as well as the fundamental property of topology \Cref{eq:bkbk1}. 
+
+
+\chapter{ Density of States on Simplicial Complexes}
+
+Spectral properties of higher-order Laplacian operators relate to various topological features REF; in the case of the classical graph Laplacian operator, various part of the spectrum and eigenvectors have been used to motif recognition, node importance, centrality measures, etc. 
+
+At the same time, such spectral information is exceedingly expensive to compute. \cite{dong2019network} introduced the notion of spectral densities which can be efficiently approximated:
+
+\begin{definition}[Density of States]
+      Fro a given symmetric matrix\footnote{we need to ask something of this matrix} \( A = Q \Lambda Q^\top \) with \( Q^\top Q = I \) and diagonal \( \Lambda = \diag \left( \lambda_1, \dots \lambda_{n} \right) \), the \emph{spectral density} or \emph{density of states} (DoS)
+      \begin{equation}
+            \mu( \lambda \mid A ) = \frac{1}{n} \sum_{i=1}^{n} \delta \left( \lambda - \lambda_i \right)
+      \end{equation}
+      Additionally, let \( \b q_i \) be a corresponding unit eigenvector of \( A \) (such that \( A \b q_i = \lambda_i \b q_i \) and \( Q = \left( \b q_1 \mid \b q_2 \mid \dots \mid \b q_n \right)\)); then one can define a set of local (entry-wise) densities of states (\emph{LDoS}):
+      \begin{equation}
+            \mu_k ( \lambda \mid A ) = \sum_{i=1}^{n} \left| \b e_k^\top \b q_i \right|^2 \delta \left( \lambda - \lambda_i \right)
+      \end{equation}
+      with \( \b e_k \) being the corresponding versor. 
+\end{definition}
+
+Let us assume that \( \sigma \left(  A  \right) \subset [-1, 1] \); otherwise, one can reschedule the operator such that the spectrum lands inside \( [-1, 1]\) segment (e.g. by \( A \to \frac{2}{\lambda_{\max}} A - I \))\todo{here we would need to compute at least the leading eigenvalue, but this is relatively cheap and stable, right? Right?}.
 
 
 
