@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.17)  30 APR 2024 14:20
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.6.17)  29 MAY 2024 17:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1537,7 +1537,13 @@ Missing character: There is no r ("72) in font nullfont!
 Missing character: There is no g ("67) in font nullfont!
 Missing character: There is no i ("69) in font nullfont!
 Missing character: There is no n ("6E) in font nullfont!
-Excluding 'comment' comment. [3] (./notes.bbl
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 84.
+
+LaTeX Warning: Marginpar on page 3 moved.
+
+
+LaTeX Warning: Marginpar on page 3 moved.
+
 Missing character: There is no t ("74) in font nullfont!
 Missing character: There is no o ("6F) in font nullfont!
 Missing character: There is no t ("74) in font nullfont!
@@ -1568,7 +1574,56 @@ Missing character: There is no r ("72) in font nullfont!
 Missing character: There is no g ("67) in font nullfont!
 Missing character: There is no i ("69) in font nullfont!
 Missing character: There is no n ("6E) in font nullfont!
-) [4
+
+Overfull \hbox (2.198pt too wide) in paragraph at lines 92--99
+\TU/PoppinsExtraLight(1)/m/n/10.95 sifier can be subsampled from a given simplificial copmlex with high prob-
+ []
+
+[3]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 101.
+Package hyperref Info: bookmark level for unknown thm defaults to 0 on input line 105.
+
+Underfull \hbox (badness 1048) in paragraph at lines 118--119
+[][][]  []\TU/PoppinsExtraLight(1)/b/n/10.95 (Sensitivity of the Sparsification vis-a-vis sampling measure $[]\OT1/cmbr/bx/n/13 p$[]\TU/PoppinsExtraLight(1)/b/n/10.95 )[]
+ []
+
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 132.
+[4]
+
+LaTeX Warning: Marginpar on page 5 moved.
+
+Excluding 'comment' comment. [5] (./notes.bbl
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no o ("6F) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no l ("6C) in font nullfont!
+Missing character: There is no e ("65) in font nullfont!
+Missing character: There is no f ("66) in font nullfont!
+Missing character: There is no t ("74) in font nullfont!
+Missing character: There is no m ("6D) in font nullfont!
+Missing character: There is no a ("61) in font nullfont!
+Missing character: There is no r ("72) in font nullfont!
+Missing character: There is no g ("67) in font nullfont!
+Missing character: There is no i ("69) in font nullfont!
+Missing character: There is no n ("6E) in font nullfont!
+) [6
 
 ] (./notes.aux)
 
@@ -1579,15 +1634,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: D3A50FFFC4E3B1250440A0E7F4D3FF9F;870.
+(rerunfilecheck)             Checksum: B5FAECB35235A57B94C940CCA1A523D5;1219.
  ) 
 Here is how much of TeX's memory you used:
- 52784 strings out of 476179
- 1287042 string characters out of 5809544
- 1796104 words of memory out of 5000000
- 72609 multiletter control sequences out of 15000+600000
- 487275 words of font info for 137 fonts, out of 8000000 for 9000
+ 52940 strings out of 476179
+ 1290315 string characters out of 5809544
+ 1797131 words of memory out of 5000000
+ 72757 multiletter control sequences out of 15000+600000
+ 491145 words of font info for 155 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 114i,14n,118p,808b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,14n,118p,1053b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on notes.xdv (4 pages, 127188 bytes).
+Output written on notes.xdv (6 pages, 211300 bytes).

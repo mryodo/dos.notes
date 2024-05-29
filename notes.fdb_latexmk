@@ -1,17 +1,17 @@
 # Fdb version 3
-["bibtex notes"] 1714479607 "notes.aux" "notes.bbl" "notes" 1714479609
+["bibtex notes"] 1716995889 "notes.aux" "notes.bbl" "notes" 1716995891
   "/usr/local/texlive/2022/texmf-dist/bibtex/bst/base/alpha.bst" 1292289607 23907 a5f93555796fb564b924339521f10a7c ""
-  "notes.aux" 1714479608 3255 ca30e92bcfdc80b9b73da97f8ccd8573 "xelatex"
+  "notes.aux" 1716995891 6619 4d4e643cc0a7e9e7ede87816a9defd14 "xelatex"
   "notes.bib" 1713536666 1789 a6e998c22b8a7fa31c6bc3f45d16d409 ""
   (generated)
   "notes.bbl"
   "notes.blg"
-["xdvipdfmx"] 1714479609 "notes.xdv" "notes.pdf" "notes" 1714479609
-  "notes.xdv" 1714479608 127188 b508c64509669dfdb62667636840f189 "xelatex"
+["xdvipdfmx"] 1716995891 "notes.xdv" "notes.pdf" "notes" 1716995891
+  "notes.xdv" 1716995891 211300 fcde79006376b1b169f441d4a483f93e "xelatex"
   (generated)
   "notes.pdf"
-["xelatex"] 1714479607 "/Users/mryodo/Documents/work/rwth/dos/newnotes/notes.tex" "notes.xdv" "notes" 1714479609
-  "/Users/mryodo/Documents/work/rwth/dos/newnotes/notes.tex" 1714479580 18473 97c18c15f5b92e16bc5cc4b4e5a3a1fc ""
+["xelatex"] 1716995889 "/Users/mryodo/Documents/work/rwth/dos/newnotes/notes.tex" "notes.xdv" "notes" 1716995891
+  "/Users/mryodo/Documents/work/rwth/dos/newnotes/notes.tex" 1716995886 26116 1834084fd0b70525598d3ee0998f4592 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -19,14 +19,20 @@
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbr10.tfm" 1136768653 1304 95ad082f6791446dc43df559d5c79878 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbr8.tfm" 1136768653 1304 6f575d26e34fea6311d7ae3e9a5bf8d0 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbr9.tfm" 1136768653 1304 e2e316ff64875ec2734039efad622868 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbras10.tfm" 1136768653 848 1ad7f1561396ccf4a79d2f57e14bf3a9 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbras8.tfm" 1136768653 852 e8c0fa95ccb34adce23fd4bfeb3ad1f7 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbras9.tfm" 1136768653 852 cab94eae6b9b76a1020fd8d827439837 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrbs10.tfm" 1136768653 864 3f66cf976f631b314058c4c72d2f1cba ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrbs8.tfm" 1136768653 896 8688b0d2a6e462508cc566e10c5d6eb8 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrbs9.tfm" 1136768653 896 6dbff40fec1248f2127d2f3d50b82747 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrbx10.tfm" 1136768653 1276 96fc4f0f3a7e6743ff42c061c2134734 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrmi10.tfm" 1136768653 1544 20b33e3c0f9b0012adb04ac9d418afaa ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrmi8.tfm" 1136768653 1536 e5dc1fc92eaa02a077dfd8f5bb78f6ce ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrmi9.tfm" 1136768653 1544 d48a86d1ad6fbf224334d5212521730c ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrsy10.tfm" 1136768653 1124 00df9b89c9eb5dfe10f722aab27b3560 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrsy8.tfm" 1136768653 1120 90e1ff57236ed6769cdb8e6d58469358 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cmbright/cmbrsy9.tfm" 1136768653 1120 2c306a954d42de5e20acbf9f1b8ac50d ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/doublestroke/dsrom10.tfm" 1136768653 452 168d896d9b2ead965bf08c9db69c947f ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/doublestroke/dsrom12.tfm" 1136768653 452 d8b5931fd510ede40dce06480d31d007 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm" 1136768653 452 dc44cdd7c88ff2b15557f125edfc277b ""
@@ -319,10 +325,10 @@
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "figures/simplicialcomplex.tex" 1714479541 3405 00063ba815980b99cffabd724a45abc9 ""
   "mynotes.cls" 1710586144 21282 d254c2a58459b9f66d22c81c26cd85e0 ""
-  "notes.aux" 1714479608 3255 ca30e92bcfdc80b9b73da97f8ccd8573 "xelatex"
-  "notes.bbl" 1714479607 1455 dd3cf8951f41d946ea59f001b8cdf14f "bibtex notes"
-  "notes.out" 1714479608 870 d3a50fffc4e3b1250440a0e7f4d3ff9f "xelatex"
-  "notes.tex" 1714479580 18473 97c18c15f5b92e16bc5cc4b4e5a3a1fc ""
+  "notes.aux" 1716995891 6619 4d4e643cc0a7e9e7ede87816a9defd14 "xelatex"
+  "notes.bbl" 1716995889 1455 dd3cf8951f41d946ea59f001b8cdf14f "bibtex notes"
+  "notes.out" 1716995891 1219 b5faecb35235a57b94c940cca1a523d5 "xelatex"
+  "notes.tex" 1716995886 26116 1834084fd0b70525598d3ee0998f4592 ""
   "rwth-color.sty" 1710002970 2756 7cadecbb809c6c39ce346f664991072b ""
   "shortcuts.tex" 1713356092 6806 22891ec88bc87c973b9ae55f66dc6222 ""
   (generated)
