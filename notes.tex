@@ -25,7 +25,7 @@ You know, somewhere here, maybe\dots
 
 \chapter{ Graphs and Simplicial Complexes }
 
-Simplicial complex \( \mc K \) is a higher-order generalization of the classical graph model with pair-wise interactions with a rich set of topological descriptors. Specifically, let \( \V 0 = \{ v_1, \dots v_{m_0} \} \) be a set of nodes; then \( \mc K \) is a collection of subsets (simplices) \( \sigma \) of nodes from \( \V 0 \) such that all the subsets of \( \sigma \) are simplices of \( \mc K \) too.
+Simplicial complex \( \mc K \) is a higher-order generalization of the classical graph model with pair-wise interactions with a rich set of topological descriptors. Specifically, let \( \V 0 = \{ v_1, \dots v_{m_0} \} \) be a set of nodes; then \( \mc K \) is a collection of subsets (simplices) \( \sigma \) of nodes from \( \V 0 \) such that all the subsets of \( \sigma \) are simplices in \( \mc K \) too.
 We refer to a simplex made out of \( k + 1 \) nodes \( \sigma = [ v_{i_1}, \ldots v_{i_{k+1}} ] \) as being of order \( k \)%, and write \( \dim \sigma = k \); 
 the set of all the simplices of order \( k \) in the complex \( \mc K \) is denoted by \( \V k \). Thus, \( \V 0 \) are the vertices of \( \mc K \), \( \V 1 \) are edges between pairs of vertices, \( \V 2 \) triangles connecting three vertices, and so on. We let \( m_k = | \V k | \) denote the cardinality of \( \V k\).
 
@@ -75,10 +75,10 @@ Note that, with the weighting scheme \Cref{eq:weighting}, the dimensionality of 
 
 Full spectral decomposition of \( \Lu k \) requires \( \mc O ( m_k^3) \) (or, more precisely, \( \mc O (m_k^\omega)\) where \( \omega \) is the exponent of matrix multiplication, \cite{banks2023pseudospectral}); accounting for the sparsity of \( \Lu k \), the actual computation time is even lower. As a result, even so we are going to use \( \mc O (m_k^3 )\) as a reference point to beat, the actual execution time should be carefully compared. 
 
-Instead of the 
+Instead of the direct computation, one can exploit spectral density functions known as \emph{density of states} which encompass all the spectral information. Specifically,
 
 \begin{definition}[Density of States]
-      Fro a given symmetric matrix\footnote{we need to ask something of this matrix} \( A = Q \Lambda Q^\top \) with \( Q^\top Q = I \) and diagonal \( \Lambda = \diag \left( \lambda_1, \dots \lambda_{n} \right) \), the \emph{spectral density} or \emph{density of states} (DoS)
+      Fro a given symmetric matrix \( A = Q \Lambda Q^\top \) with \( Q^\top Q = I \) and diagonal \( \Lambda = \diag \left( \lambda_1, \dots \lambda_{n} \right) \), the \emph{spectral density} or \emph{density of states} (DoS)
       \begin{equation}
             \mu( \lambda \mid A ) = \frac{1}{n} \sum_{i=1}^{n} \delta \left( \lambda - \lambda_i \right)
       \end{equation}
@@ -88,9 +88,45 @@ Instead of the
       \end{equation}
       with \( \b e_k \) being the corresponding versor. 
 \end{definition}
-\todo{approximation}
-\todo{what happens with shift for approximation?}
-\todo{approximation error}
+
+Note that DoS \( \mu ( \lambda \mid A ) \) only describes the spectrum \( \sigma ( A ) \) while the family of LDoS \( \{ \mu_k (\lambda \mid A ) \} \) contain additionally eigenvectors \( \b q_i \). The exact computation of either DoS or LDoS still requires the full spectral decomposition; instead, one can try to approximate densities of states via Kernel Polynomial Method (KPM).%\todo{check the name of the method in Benson's paper}.
+
+\section{ Chebyshev Approximation of DoS/LDoS }
+
+Let us assume we transition from symmetric \( A \) to a symmetric \( H \) such that \( \sigma(H) \subseteq [-1, 1 ]\), e.g. by \( H = \frac{2}{ \lambda_{\max{}} ( A ) } A - I \). This allows us to assume that \( \mathrm{supp}\, \mu( \lambda \mid H ) \subseteq [-1, 1]\) and it can be decomposed into an orthonormal basis on \( [-1, 1]\). 
+
+Specifically, let \( T_m(x) \) be a family of Chebyshev polynomials of the first kind iff:
+\begin{equation}
+      T_0(x) = 1, \quad T_1(x) = x, \qquad T_{m+1}(x) = 2x T_m(x) - T_{m-1}(x) 
+\end{equation}
+Polymonials \( T_m(x) \) are famously orthogonal on \( [-1, 1] \) in \(L_2\)-scalar product with the weight function \( w(x) = \frac{2}{(1+\delta_{0m})\pi \sqrt{1-x^2}}\)\todo{figure out how to write here the problem with \( m = 0 \) for the orthonormality}. Then, \( T^*_m(x) = w_m(x) T_m(x)\) form a dual Chebyshev basis, and one can write an expansion:
+\begin{equation}
+      \begin{aligned}
+            \mu( \lambda \mid H ) & = \sum_{m=0}^{\infty} d_m T^*_m(\lambda)     \\
+            \mu_k( \lambda \mid H ) & = \sum_{m=0}^{\infty} d_{mk} T^*_m(\lambda)   
+      \end{aligned}
+\end{equation}
+Note that since \( T_m(x) \) are orthogonal to \( T^*_m(x) \), so 
+\begin{equation}
+      \begin{aligned}
+            d_m = & \int T_m(\lambda) \mu(\lambda \mid H) d\lambda = \frac{1}{n} \sum_{i=1}^n T_m(\lambda_i) = \frac{1}{n} \mathrm{tr} (T_m(H)) \\
+            d_{mk} = & \int T_m(\lambda) \mu_k(\lambda \mid H) d\lambda = \sum_{i=1}^n \left| \b e_k^\top \b q_i \right|^2 T_m(\lambda_i) = \left[ T_m( H ) \right]_{kk}
+      \end{aligned}
+\end{equation}
+with 
+\begin{equation}
+      \begin{aligned}
+            \ds E \left[ \b z^\top H \b z \right] = & \mathrm{tr}(H) \approx \frac{1}{N_z} \sum_{j=1}^{N_z} Z_j^\top H Z_j \\
+            \ds E \left[ \b z \odot H \b z \right] = & \diag ( H ) \approx \frac{1}{N_z} \sum_{j=1}^{N_z} Z_j \odot H Z_j  
+      \end{aligned}
+\end{equation}
+where each entry in \( \b z \) is i.i.d with zero mean and unit variance. 
+
+Note that due to the recurrent definition, \( d_m = \frac{1}{n} \ds E \left[ \b z^\top T_m(H) \b z \right] = \frac{1}{n} \ds E \left[ \b z^\top \left( 2 H T_{m-1}(H) - T_{m-2}(H) \right) \b z \right] \), the computation of \( d_m \) requires only \emph{one} new \texttt{matvec} computation for \( H T_{m-1}(H) \b z \) since estimations for \( T_{m-1}(H) \b z \) and \( T_{m-2}(H) \b z \) are inherited from \( d_{m-1} \) and \( d_{m-2}\). As a result, the computational cost of each new moment \( d_m \) is \( \mc O( \texttt{nnz}(H))\), and, assuming we use \( M \) moments in the decomposition, the overall complexity is \( \mc O \left( N_z M \texttt{nnz}(H)  \right)\).
+
+In the case of \( L_k \), we get \( \mc O \left( N_z M ( k m_k + (k+1)m_{k+1}) \right)\).
+
+\section{ Effects of the Hodge Decomposition }
 
 \chapter{ Sparsification of Simplicial Complexes }
 

@@ -1,10 +1,17 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{SBH{\etalchar{+}}20}
+\begin{thebibliography}{BGVKS23}
 
 \bibitem[BGL16]{benson2016higher}
 Austin~R Benson, David~F Gleich, and Jure Leskovec.
 \newblock Higher-order organization of complex networks.
 \newblock {\em Science}, 353(6295):163--166, 2016.
+
+\bibitem[BGVKS23]{banks2023pseudospectral}
+Jess Banks, Jorge Garza-Vargas, Archit Kulkarni, and Nikhil Srivastava.
+\newblock Pseudospectral shattering, the sign function, and diagonalization in
+  nearly matrix multiplication time.
+\newblock {\em Foundations of computational mathematics}, 23(6):1959--2047,
+  2023.
 
 \bibitem[DBB19]{dong2019network}
 Kun Dong, Austin~R Benson, and David Bindel.
