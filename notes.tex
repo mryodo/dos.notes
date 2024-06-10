@@ -70,6 +70,13 @@ Note that, with the weighting scheme \Cref{eq:weighting}, the dimensionality of 
 
 
 \chapter{ Density of States and Hodge Decomposition}
+
+\todo{add some motivation for this discussion/transition}
+
+Full spectral decomposition of \( \Lu k \) requires \( \mc O ( m_k^3) \) (or, more precisely, \( \mc O (m_k^\omega)\) where \( \omega \) is the exponent of matrix multiplication, \cite{banks2023pseudospectral}); accounting for the sparsity of \( \Lu k \), the actual computation time is even lower. As a result, even so we are going to use \( \mc O (m_k^3 )\) as a reference point to beat, the actual execution time should be carefully compared. 
+
+Instead of the 
+
 \begin{definition}[Density of States]
       Fro a given symmetric matrix\footnote{we need to ask something of this matrix} \( A = Q \Lambda Q^\top \) with \( Q^\top Q = I \) and diagonal \( \Lambda = \diag \left( \lambda_1, \dots \lambda_{n} \right) \), the \emph{spectral density} or \emph{density of states} (DoS)
       \begin{equation}
