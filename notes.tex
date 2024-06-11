@@ -124,9 +124,15 @@ where each entry in \( \b z \) is i.i.d with zero mean and unit variance.
 
 Note that due to the recurrent definition, \( d_m = \frac{1}{n} \ds E \left[ \b z^\top T_m(H) \b z \right] = \frac{1}{n} \ds E \left[ \b z^\top \left( 2 H T_{m-1}(H) - T_{m-2}(H) \right) \b z \right] \), the computation of \( d_m \) requires only \emph{one} new \texttt{matvec} computation for \( H T_{m-1}(H) \b z \) since estimations for \( T_{m-1}(H) \b z \) and \( T_{m-2}(H) \b z \) are inherited from \( d_{m-1} \) and \( d_{m-2}\). As a result, the computational cost of each new moment \( d_m \) is \( \mc O( \texttt{nnz}(H))\), and, assuming we use \( M \) moments in the decomposition, the overall complexity is \( \mc O \left( N_z M \texttt{nnz}(H)  \right)\).
 
-In the case of \( L_k \), we get \( \mc O \left( N_z M ( k m_k + (k+1)m_{k+1}) \right)\).
+In the case of \( L_k \), we get \( \mc O \left( N_z M ( k m_k + (k+1)m_{k+1}) \right)\) either for DoS of LDoS.
 
 \section{ Spike problems and filtration }
+
+Approximation via KPM has an unfortunate down-side: since it is a basis decomposition, a local failure (e.g. in the neibourhood of a a specific \( \lambda \) ) affects the approximation quality everywhere. Moreover, since \( T^*_m(x)\) are mostly polynomial, spikes in the spectral densities (i.e. associated with eigenvalues of high multiplicity) are poorly approximated in general. 
+
+
+
+
 
 \section{ Effects of the Hodge Decomposition }
 
