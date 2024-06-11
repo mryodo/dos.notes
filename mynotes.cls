@@ -122,14 +122,16 @@
       %\usepackage[T1]{fontenc}     
       %\usepackage{lmodern,mathrsfs}
       \usepackage{cmbright}
-      \usepackage{fontspec}
-      \setmainfont[Scale=1.0]{Poppins ExtraLight}
-      \setsansfont[ BoldFont={Poppins Medium}, 
-       ItalicFont={Poppins ExtraLight Italic},
-       BoldItalicFont={Poppins Medium Italic}]{Poppins ExtraLight}
+      % \usepackage{fontspec}
+     % \setmainfont[Scale=1.0]{Poppins ExtraLight}
+      %\setsansfont[ BoldFont={Poppins Medium}, 
+      % ItalicFont={Poppins ExtraLight Italic},
+      % BoldItalicFont={Poppins Medium Italic}]{Poppins ExtraLight}
+      \usepackage[defaultsans]{comfortaa}
+      \usepackage[T1]{fontenc}
       %\usepackage{nunito}
       %\usepackage{lato}
-      %\renewcommand{\mddefault}{l}
+      \renewcommand{\mddefault}{l}
       %\renewcommand{\bfdefault}{b}
       %\usepackage[normalweight=Light]{mdsymbol}
 
