@@ -1,0 +1,44 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{BGVKS23}
+
+\bibitem[BGL16]{benson2016higher}
+Austin~R Benson, David~F Gleich, and Jure Leskovec.
+\newblock Higher-order organization of complex networks.
+\newblock {\em Science}, 353(6295):163--166, 2016.
+
+\bibitem[BGVKS23]{banks2023pseudospectral}
+Jess Banks, Jorge Garza-Vargas, Archit Kulkarni, and Nikhil Srivastava.
+\newblock Pseudospectral shattering, the sign function, and diagonalization in
+  nearly matrix multiplication time.
+\newblock {\em Foundations of computational mathematics}, 23(6):1959--2047,
+  2023.
+
+\bibitem[DBB19]{dong2019network}
+Kun Dong, Austin~R Benson, and David Bindel.
+\newblock Network density of states.
+\newblock In {\em Proceedings of the 25th ACM SIGKDD International Conference
+  on Knowledge Discovery \& Data Mining}, pages 1152--1161, 2019.
+
+\bibitem[GST23]{guglielmi2023quantifying}
+Nicola Guglielmi, Anton Savostianov, and Francesco Tudisco.
+\newblock Quantifying the {{Structural Stability}} of {{Simplicial Homology}}.
+\newblock {\em Journal of Scientific Computing}, 97(1):2, August 2023.
+
+\bibitem[Lim20]{Lim15}
+Lek-Heng Lim.
+\newblock Hodge laplacians on graphs.
+\newblock {\em Siam Review}, 62(3):685--715, 2020.
+
+\bibitem[OPW22]{osting2017spectral}
+Braxton Osting, Sourabh Palande, and Bei Wang.
+\newblock Spectral sparsification of simplicial complexes for clustering and
+  label propagation.
+\newblock {\em Journal of computational geometry}, 11(1), 2022.
+
+\bibitem[SBH{\etalchar{+}}20]{schaub2019random}
+Michael~T Schaub, Austin~R Benson, Paul Horn, Gabor Lippner, and Ali Jadbabaie.
+\newblock Random walks on simplicial complexes and the normalized {H}odge
+  1-{L}aplacian.
+\newblock {\em SIAM Review}, 62(2):353--391, 2020.
+
+\end{thebibliography}

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.17)  24 JUN 2024 13:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.17)  24 JUN 2024 15:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/mryodo/Documents/work/rwth/dos/newnotes/notes
-(/Users/mryodo/Documents/work/rwth/dos/newnotes/notes.tex
+**/Users/mryodo/Documents/work/rwth/dos/newnotes/clean
+(/Users/mryodo/Documents/work/rwth/dos/newnotes/clean.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (./mynotes.cls
 Document Class: mynotes 2023/05/22 Version 1.0 by @mryodo
@@ -12,8 +12,8 @@ Document Class: mynotes 2023/05/22 Version 1.0 by @mryodo
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -585,11 +585,11 @@ LaTeX Font Info:    Trying to load font information for T1+comfortaa on input li
 File: T1comfortaa.fd 2019/06/24 Font definitions for T1/comfortaa.
 )
 LaTeX Font Info:    Font shape `T1/comfortaa/m/n' will be
-(Font)              scaled to size 10.95pt on input line 112.
+(Font)              scaled to size 10.0pt on input line 112.
 ) (./rwth-color.sty)
 \spacelength=\skip68
 LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 10.95pt on input line 182.
+(Font)              scaled to size 10.0pt on input line 182.
 \c@thm=\count316
 \c@theorem=\count317
 \c@Corollary=\count318
@@ -606,7 +606,7 @@ LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
 \c@conjecture=\count329
 \c@example=\count330
 \c@Chapcounter=\count331
-Package caption Info: Option `figurename' requires the `newfloat' package on input line 588.
+Package caption Info: Option `figurename' requires the `newfloat' package on input line 610.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty
 Package: newfloat 2019/09/02 v1.1l Defining new floating environments (AR)
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/enumitem/enumitem.sty
@@ -1118,8 +1118,8 @@ Package: xfrac 2022-01-12 L3 Experimental split-level fractions
 Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
 (xtemplate)             line 80.
 
-)) (./notes.aux)
-\openout1 = `notes.aux'.
+)) (./clean.aux)
+\openout1 = `clean.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
 LaTeX Font Info:    ... okay on input line 14.
@@ -1167,12 +1167,12 @@ Package caption Info: End \AtBeginDocument code.
 * \topmargin=-147.07527pt
 * \headheight=16.91478pt
 * \headsep=109.92676pt
-* \topskip=11.0pt
+* \topskip=10.0pt
 * \footskip=20.0pt
 * \marginparwidth=119.9664pt
 * \marginparsep=11.99937pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1215,9 +1215,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 14.
 LaTeX Info: Redefining \pageref on input line 14.
 LaTeX Info: Redefining \nameref on input line 14.
- (./notes.out) (./notes.out)
+ (./clean.out) (./clean.out)
 \@outlinefile=\write6
-\openout6 = `notes.out'.
+\openout6 = `clean.out'.
 
 
 
@@ -1233,7 +1233,7 @@ LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
 LaTeX Font Info:    Font shape `T1/comfortaa/b/n' will be
 (Font)              scaled to size 14.4pt on input line 17.
 LaTeX Font Info:    Font shape `T1/comfortaa/b/n' will be
-(Font)              scaled to size 10.95pt on input line 17.
+(Font)              scaled to size 10.0pt on input line 17.
 LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line 17.
 (/usr/local/texlive/2022/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
@@ -1246,30 +1246,26 @@ LaTeX Font Info:    Trying to load font information for U+wasy on input line 17.
  (/usr/local/texlive/2022/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
-
-LaTeX Font Warning: Font shape `U/wasy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 17.
-
 LaTeX Font Info:    Font shape `T1/comfortaa/b/n' will be
-(Font)              scaled to size 10.0pt on input line 17.
+(Font)              scaled to size 9.0pt on input line 17.
 LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 10.0pt on input line 17.
+(Font)              scaled to size 9.0pt on input line 17.
+LaTeX Font Info:    Font shape `T1/comfortaa/l/it' in size <9> not available
+(Font)              Font shape `T1/comfortaa/l/sl' tried instead on input line 17.
+LaTeX Font Info:    Font shape `T1/comfortaa/l/sl' will be
+(Font)              scaled to size 9.0pt on input line 17.
+LaTeX Font Info:    Font shape `T1/comfortaa/l/it' in size <6> not available
+(Font)              Font shape `T1/comfortaa/l/sl' tried instead on input line 17.
+LaTeX Font Info:    Font shape `T1/comfortaa/l/sl' will be
+(Font)              scaled to size 6.0pt on input line 17.
+LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
+(Font)              scaled to size 6.0pt on input line 17.
 LaTeX Font Info:    Font shape `T1/comfortaa/l/it' in size <10> not available
 (Font)              Font shape `T1/comfortaa/l/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T1/comfortaa/l/sl' will be
 (Font)              scaled to size 10.0pt on input line 17.
-LaTeX Font Info:    Font shape `T1/comfortaa/l/it' in size <7> not available
-(Font)              Font shape `T1/comfortaa/l/sl' tried instead on input line 17.
-LaTeX Font Info:    Font shape `T1/comfortaa/l/sl' will be
-(Font)              scaled to size 7.0pt on input line 17.
-LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 7.0pt on input line 17.
-LaTeX Font Info:    Font shape `T1/comfortaa/l/it' in size <10.95> not available
-(Font)              Font shape `T1/comfortaa/l/sl' tried instead on input line 17.
-LaTeX Font Info:    Font shape `T1/comfortaa/l/sl' will be
-(Font)              scaled to size 10.95pt on input line 17.
 LaTeX Font Info:    Trying to load font information for T1+cmtl on input line 17.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/cmbright/t1cmtl.fd
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/cmbright/t1cmtl.fd
 File: t1cmtl.fd 2005/04/13 v8.1 (WaS)
 )
 
@@ -1277,12 +1273,12 @@ LaTeX Font Warning: Font shape `T1/cmtl/l/it' undefined
 (Font)              using `T1/cmtl/m/n' instead on input line 17.
 
 LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 9.0pt on input line 17.
+(Font)              scaled to size 8.0pt on input line 17.
 LaTeX Font Info:    Font shape `T1/comfortaa/b/n' will be
-(Font)              scaled to size 9.0pt on input line 17.
+(Font)              scaled to size 8.0pt on input line 17.
 (./chapters/intro.tex
 LaTeX Font Info:    Font shape `T1/comfortaa/b/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
+(Font)              scaled to size 12.0pt on input line 1.
 
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
@@ -1315,8 +1311,8 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 12.0pt on input line 2.
-) (./chapters/sc.tex
+(Font)              scaled to size 12.0pt on input line 1.
+) (./chapters/prelims.tex
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -1347,45 +1343,59 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
-LaTeX Font Info:    Trying to load font information for U+dsrom on input line 7.
-(/usr/local/texlive/2022/texmf-dist/tex/latex/doublestroke/Udsrom.fd
-File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-)
-Overfull \hbox (3.97859pt too wide) in paragraph at lines 7--8
-[]\T1/comfortaa/l/n/10.95 Each set of sim-plices $[]\OMS/cmbrs/m/n/13 V[]\OT1/cmbr/m/n/13 (\OMS/cmbrs/m/n/13 K\OT1/cmbr/m/n/13 ) = []$[] \T1/comfortaa/l/n/10.95 in-duces a lin-ear space
- []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 3.
 
 
-Overfull \hbox (1.43456pt too wide) in paragraph at lines 10--12
-\T1/comfortaa/l/n/10.95 and rep-re-sent each bound-ary op-er-a-tor as a ma-trix $[]\OML/cmbrm/m/it/13 B[] \OMS/cmbrs/m/n/13 2 [][]$[]
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 12.
 
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 18.
+Excluding 'comment' comment.) (./chapters/sparse.tex
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no f in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
 [1
 
-{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./figures/simplicialcomplex.tex
-LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 8.0pt on input line 8.
-
-Overfull \hbox (68.41794pt too wide) in paragraph at lines 44--45
- [][] 
- []
-
+{/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package hyperref Info: bookmark level for unknown thm defaults to 0 on input line 9.
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 23.
+LaTeX Font Info:    Trying to load font information for U+dsrom on input line 28.
+ (/usr/local/texlive/2022/texmf-dist/tex/latex/doublestroke/Udsrom.fd
+File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
 )
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 22.
-LaTeX Font Info:    Font shape `T1/comfortaa/l/n' will be
-(Font)              scaled to size 8.84723pt on input line 23.
-LaTeX Font Info:    Calculating math sizes for size <8.84723> on input line 23.
-
-
-LaTeX Font Warning: Font shape `U/wasy/m/n' in size <4.42361> not available
-(Font)              size <5> substituted on input line 23.
-
-[2]
-Overfull \hbox (13.98566pt too wide) in paragraph at lines 44--45
-\T1/comfortaa/l/n/10.95 al-ity of the ho-mol-ogy group is pre-served, $[][] [] \OML/cmbrm/m/it/13 L[] \OT1/cmbr/m/n/13 = [] [] []$[]\T1/comfortaa/l/n/10.95 , [[]]
- []
-
-)
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 33.
+ [2]
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 62.
+) (./chapters/kid.tex
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -1416,36 +1426,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input line 24.
-
-Overfull \hbox (19.69768pt too wide) in paragraph at lines 26--27
-\T1/comfortaa/l/n/10.95 cisely, $[]\OMS/cmbrs/m/n/13 O\OT1/cmbr/m/n/13 (\OML/cmbrm/m/it/13 m[]\OT1/cmbr/m/n/13 )$[] \T1/comfortaa/l/n/10.95 where $[]\OML/cmbrm/m/it/13 !$[] \T1/comfortaa/l/n/10.95 is the ex-po-nent of ma-trix mul-ti-pli-ca-tion, [[]]);
- []
-
-[3]
-Overfull \hbox (11.41998pt too wide) in paragraph at lines 51--53
-\T1/comfortaa/l/n/10.95 prod-uct with the weight func-tion $[]\OML/cmbrm/m/it/13 w\OT1/cmbr/m/n/13 (\OML/cmbrm/m/it/13 x\OT1/cmbr/m/n/13 ) = []$[][][][]\T1/comfortaa/l/n/10.95 . Then, $[]\OML/cmbrm/m/it/13 T[]\OT1/cmbr/m/n/13 (\OML/cmbrm/m/it/13 x\OT1/cmbr/m/n/13 ) =
- []
-
-
-LaTeX Font Warning: Font shape `T1/cmtl/l/n' undefined
-(Font)              using `T1/cmtl/m/n' instead on input line 75.
-
-
-Overfull \hbox (33.62006pt too wide) in paragraph at lines 77--78
-[]\T1/comfortaa/l/n/10.95 As a re-sult, for $[]\OML/cmbrm/m/it/13 L[]$[] \T1/comfortaa/l/n/10.95 we get the com-plex-ity of $[]\OMS/cmbrs/m/n/13 O []$[]
- []
-
-[4]
-Overfull \hbox (6.2587pt too wide) in paragraph at lines 83--84
-\T1/comfortaa/l/n/10.95 the same spec-trum as $[]\OML/cmbrm/m/it/13 H$[] \T1/comfortaa/l/n/10.95 with-out the fil-tered out mul-ti-ple $[]\OML/cmbrm/m/it/13 ^^U$[]\T1/comfortaa/l/n/10.95 -eigenvalues.
- []
-
-
-Overfull \hbox (9.51196pt too wide) in paragraph at lines 83--84
-\T1/comfortaa/l/n/10.95 ever re-quires the knowl-edge of the or-thonor-mal ba-sis of the eigenspace
- []
-
+) (./chapters/conclusion.tex
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -1476,27 +1457,7 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
-
-Overfull \hbox (3.49583pt too wide) in paragraph at lines 95--96
-\T1/comfortaa/l/n/10.95 the as-so-ci-ated Lapla-cian op-er-a-tors $[]\OML/cmbrm/m/it/13 L[]$[] \T1/comfortaa/l/n/10.95 which be-comes more and more
- []
-
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 106.
-Package hyperref Info: bookmark level for unknown thm defaults to 0 on input line 110.
-[5]
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 138.
- [6]
-
-LaTeX Warning: Marginpar on page 7 moved.
-
-
-LaTeX Font Warning: Font shape `OT1/cmbr/bx/n' in size <8> not available
-(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 168.
-
-
-LaTeX Font Warning: Font shape `OT1/cmbr/bx/n' in size <6> not available
-(Font)              Font shape `OT1/cmbr/m/n' tried instead on input line 168.
-
+) [3] (./clean.bbl
 Missing character: There is no t in font nullfont!
 Missing character: There is no o in font nullfont!
 Missing character: There is no t in font nullfont!
@@ -1527,111 +1488,28 @@ Missing character: There is no r in font nullfont!
 Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
+) [4
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 168.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 168.
-
-
-Overfull \hbox (25.7878pt too wide) in paragraph at lines 176--177
-\T1/comfortaa/l/n/10.95 der to get $[]\OML/cmbrm/m/it/13 B[]$[]\T1/comfortaa/l/n/10.95 , we need $[]\OMS/cmbrs/m/n/13 O\OT1/cmbr/m/n/13 (\OML/cmbrm/m/it/13 m[]m[]\OT1/cmbr/m/n/13 )$[] \T1/comfortaa/l/n/10.95 and then we need to do $[][]$[]-decomposition,
- []
-
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-[7] Excluding 'comment' comment. [8] (./notes.bbl
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no l in font nullfont!
-Missing character: There is no e in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no t in font nullfont!
-Missing character: There is no m in font nullfont!
-Missing character: There is no a in font nullfont!
-Missing character: There is no r in font nullfont!
-Missing character: There is no g in font nullfont!
-Missing character: There is no i in font nullfont!
-Missing character: There is no n in font nullfont!
-
-Underfull \hbox (badness 1769) in paragraph at lines 5--8
-[]\T1/comfortaa/l/n/10.95 Austin R Ben-son, David F Gle-ich, and Jure Leskovec.
- []
-
-) [9
-
-] (./notes.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.59723pt have occurred.
-
+] (./clean.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `notes.out' has not changed.
-(rerunfilecheck)             Checksum: 1BD68FB8C2614EA920D77998503A1719;2484.
+Package rerunfilecheck Info: File `clean.out' has not changed.
+(rerunfilecheck)             Checksum: DB3B74839BD0F3B2D49BB14C8110E598;1881.
  ) 
 Here is how much of TeX's memory you used:
- 51012 strings out of 478268
- 1207431 string characters out of 5846347
- 1646164 words of memory out of 5000000
- 68248 multiletter control sequences out of 15000+600000
- 604914 words of font info for 162 fonts, out of 8000000 for 9000
+ 50580 strings out of 478268
+ 1198953 string characters out of 5846347
+ 1634524 words of memory out of 5000000
+ 67840 multiletter control sequences out of 15000+600000
+ 570882 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,15n,118p,1049b,1467s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/comfortaa/a_xu66hj.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Bold.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbras10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on notes.pdf (9 pages, 231828 bytes).
+ 114i,15n,118p,819b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/comfortaa/a_xu66hj.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Bold.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbras10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbtl10.pfb>
+Output written on clean.pdf (4 pages, 210642 bytes).
 PDF statistics:
- 240 PDF objects out of 1000 (max. 8388607)
- 199 compressed objects within 2 object streams
- 69 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 180 PDF objects out of 1000 (max. 8388607)
+ 142 compressed objects within 2 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

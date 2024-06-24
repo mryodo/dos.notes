@@ -1,0 +1,66 @@
+\chapter{ Sparsification of Simplicial Complexes }
+% 
+%      1. Speilman sparsification
+%      2. Computational cost
+%      3. Reformulation through LDoS
+%      4. Sensitivity of the sparsification towards the norm perturbation
+%
+
+\begin{thm}[Simplicial Sparsification, \cite{osting2017spectral}] \label{thm:sparsify}
+      Let \( \mc K \) be a simplicial complex restricted to its \(p\)-skeleton, \( \mc K = \bigcup_{i=0}^p \V i \).  Let   \( \Lu k (\mc K ) \) be its  \(k\)-th up-Laplacian and let \( m_k = | \V k | \). For any \( \eps > 0 \), a sparse simplicial complex \( \mc L \) can be sampled as follows:
+      \begin{enumerate}[leftmargin=*, label=(\arabic*)]
+            \item compute the probability measure \( \b p  \) on \( \V {k+1} \) proportional to the generalized resistance vector \( \b r = \diag \left( B_{k+1}^\top ( \Lu k )^\dagger B_{k+1} \right) \), where  $\diag(A)$ denotes the vector of the diagonal entries of $A$;
+            \item sample \(q\) simplices \( \tau_i \) from \( \V {k+1}\) according to the probability measure \( \b p  \),  where $q$ is chosen so that  \( q ( m_k ) \ge 9 C^2 m_{k} \log ( m_{k} / \eps  )\), for some absolute constant  \( C>0 \);
+            \item form a sparse simplicial complex \( \mc L \) with all the sampled simplexes of order \( k \) and all its faces with the weight \( \frac{ w_{k+1} (\tau_i) }{ q(m_k) \b p(\tau_i)  } \); weights of repeated simplices are accumulated.
+      \end{enumerate}
+      Then, with probability at least \(1/2\), the up-Laplacian of the sparsifier \( \mc L \) is \(\eps\)-close to the original one, i.e. it holds \( \Lu k (\mc L ) \underset{\eps}{\approx} \Lu k (\mc K) \).
+\end{thm}
+
+The bottleneck of the subsampling above is the construction of the appropriate measure \( \b p \) or, more precisely, generalized effective resistance \( \b r \). Indeed, one needs a fast pseudo-inverse operator \( \left(  \Lu k \right)^\dagger \) in order to compute \( \b r \).
+
+
+
+\todo{we need to assume somewhere \( W_k = I \) for simplicity and do not forget about it}
+
+\begin{thm}[GER through LDoS]\label{thm:GER_DOS}
+      For a given simplicial complex \( mc K \) with the \(k\)-th order up-Laplacian \( \Lu k = B_{k+1} W_{k+1}^2 B_{k+1}^\top\), a generalized effective resistance \( r \) can be computed through family of local densities of states \( \{ \mu_i(\lambda \mid \Ld {k+1 }) \} \):
+      \begin{equation}
+            \b r_i = \int_{\ds R } (1 - \ds 1_0(\lambda)) \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda 
+      \end{equation}
+\end{thm}
+\todo{weighted egdges === BAD ?}
+\begin{proof}
+      Let \( B_{k+1} W_{k+1} = U S V^\top\) where \( S \) is diagonal and invertible and both \( U \) and \( V \) are orthogonal (so it is a truncated SVD decomposition of \( B_{k+1} W_{k+1} \) matrix with eliminated obsolete kernel). Then:
+      \begin{equation}
+            ( \Lu k )^\dagger = \left( B_{k+1} W_{k+1}^2 B_{k+1}^\top \right)^\dagger = \left( U S^2 U^\top \right)^\dagger = U S^{-2} U^\top
+      \end{equation}
+      \begin{equation}
+            \begin{aligned}
+                  \b r & = \diag \left( W_{k+1} B_{k+1}^\top ( \Lu k )^\dagger B_{k+1} W_{k+1} \right)  =  \\
+                  & = \diag \left(  V S U^\top U S^{-2} U^\top U S V^\top \right) = \diag \left(  V V^\top \right)
+            \end{aligned}
+      \end{equation}
+      As a result, \( \b r_i = \| V_{ i \cdot } \|^2 = \sum_j | v_{ij} |^2  \), so the \(i\)-th entry of the resistance is defined by the sum of square of \(i\)-th components of eigenvectors \( \b v_j \) of \( \Ld {k+1} = W_{k+1} B_{k+1}^\top B_{k+1} W_{k+1} \) operator where \( \b v_j \perp \ker \Ld {k+1} \).
+
+      Note that 
+      \begin{equation}
+            \mu_i ( \lambda \mid \Ld {k+1} ) = \sum_{j=1}^{m_{k+1}} \left| \b e_i^\top \b q_j \right|^2 \delta \left( \lambda - \lambda_j \right)  = \sum_{j=1}^{m_{k+1}} \left| q_{ij} \right|^2 \delta \left( \lambda - \lambda_j \right) 
+      \end{equation}
+      so 
+      \begin{equation}
+            \begin{aligned}
+                  \b r_i & = \| V_{ i \cdot } \|^2 = \sum_j | v_{ij} |^2 = \int_{ \ds R \backslash \{ 0 \} }  \sum_{j=1}^{m_{k+1}} \left| q_{ij} \right|^2 \delta \left( \lambda - \lambda_j \right)  d\lambda =\\
+                  & = \int_{ \ds R \backslash \{ 0 \} } \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda = \int_{\ds R } (1 - \ds 1_0(\lambda)) \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda
+            \end{aligned}
+      \end{equation}
+\end{proof}
+
+
+
+
+
+\begin{remark}[Sensitivity of the Sparsification vis-a-vis sampling measure \( \b p \)]
+      Compare \( \eps \) with \( \frac{1}{m_2}\): if below, you are fiiiiiiine
+
+      INSERT FIGURE HERE
+\end{remark}

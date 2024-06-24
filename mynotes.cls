@@ -27,7 +27,7 @@
   \PassOptionsToClass{\CurrentOption}{article}%
 }
 \ProcessOptions\relax
-\LoadClass[11pt]{article}
+\LoadClass[10pt]{article}
 % ================================= %
 
 
@@ -136,7 +136,7 @@
       %\usepackage[normalweight=Light]{mdsymbol}
 
       \makeatletter
-      \DeclareMathSizes{\f@size}{13}{10}{10}
+      \DeclareMathSizes{\f@size}{11}{9}{9}
       \makeatother
       
       \definecolor{cadet}{rgb}{0.33, 0.41, 0.47}
@@ -435,9 +435,10 @@
 
 \newcommand{\colorchapter}[1]{%
       \hspace*{-2cm}%
-      \begin{mybox}{\Roman{Chapcounter}}
-            \vspace{-2pt}\color{white}\bfseries \large #1
-      \end{mybox}
+      \begin{mybox4}{\Roman{Chapcounter}}
+            \vspace{-2pt}%\color{white}
+            \color{jet}\bfseries \large #1
+      \end{mybox4}
 }
 \newcommand{\colorchapternew}[1]{%
       \begin{mybox3}{\Roman{Chapcounter}}
@@ -458,6 +459,27 @@
 {}
 {0pt}
 {\vspace{10pt}\colorchapternew}
+
+
+      \newtcolorbox{mybox4}[2][]{%
+      width = \textwidth +2.5cm,
+      height = 0.9cm,
+      enhanced,
+      colback=white,
+      colframe=rwth-blue,
+      boxrule=0pt,
+      leftrule=2.5cm,
+      enlarge left by=-2.0cm-\@totalleftmargin,
+      overlay unbroken and first ={%
+      \node[rotate=00,
+            minimum width=2.5cm,
+            %anchor=south,
+            font=\large\bfseries,
+            xshift=2cm,
+            white]
+      at (frame.west) {#2};
+      }
+      }
 
 
 

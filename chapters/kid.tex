@@ -1,0 +1,15 @@
+\chapter{ KID for LDoS }
+%
+%      1. Motivation
+%      2. Nonsymmetric scaling and odd function trick
+%      3. Decomposition by Chebyshev polynomials (2nd attempt, new computation cost) 
+%      4. Error propagation (if possible)
+%      5. Benchmarking (not sure)
+%
+
+Note that up- and down-Laplacians \( \Lu k \) and \( \Ld k \) by their definition have non-trivial kernels of high dimensionality. Indeed, recalling the Hodge decomposition \todo{ref up}:
+\begin{equation}
+      \ds R^{m_k} = \lefteqn{\overbrace{\phantom{\im B_k^\top \oplus  \ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right)}}^{\ker B_{k+1}^\top}} \im B_k^\top \oplus
+      \underbrace{\ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right) \oplus  \im B_{k+1}}_{\ker B_k}            
+\end{equation}
+the subspaces \( \ker B_k = \ker \Ld k \) and \( \ker B_{k+1}^\top = \ker \Lu k \) include at least \( \im B_{k+1}\) and \( \im B_{k+1}^\top \). As a result, the zero eigenvalue in the corresponding DoS and LDoS for both operators exhibits a dominating pick severely affecting the quality of KPM-approximation.
