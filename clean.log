@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.17)  24 JUN 2024 15:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.17)  24 JUN 2024 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1495,21 +1495,21 @@ Missing character: There is no n in font nullfont!
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `clean.out' has not changed.
-(rerunfilecheck)             Checksum: DB3B74839BD0F3B2D49BB14C8110E598;1881.
+(rerunfilecheck)             Checksum: 8C4700DB8F2625F6970308EA2E09A3B3;1877.
  ) 
 Here is how much of TeX's memory you used:
- 50580 strings out of 478268
- 1198953 string characters out of 5846347
- 1634524 words of memory out of 5000000
- 67840 multiletter control sequences out of 15000+600000
+ 50595 strings out of 478268
+ 1199261 string characters out of 5846347
+ 1634750 words of memory out of 5000000
+ 67852 multiletter control sequences out of 15000+600000
  570882 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,15n,118p,819b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,15n,118p,917b,1055s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/comfortaa/a_xu66hj.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Bold.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbras10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on clean.pdf (4 pages, 210642 bytes).
+Output written on clean.pdf (4 pages, 212150 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
- 40 named destinations out of 1000 (max. 500000)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
  77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

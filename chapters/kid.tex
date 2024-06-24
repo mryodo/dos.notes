@@ -12,4 +12,8 @@ Note that up- and down-Laplacians \( \Lu k \) and \( \Ld k \) by their definitio
       \ds R^{m_k} = \lefteqn{\overbrace{\phantom{\im B_k^\top \oplus  \ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right)}}^{\ker B_{k+1}^\top}} \im B_k^\top \oplus
       \underbrace{\ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right) \oplus  \im B_{k+1}}_{\ker B_k}            
 \end{equation}
-the subspaces \( \ker B_k = \ker \Ld k \) and \( \ker B_{k+1}^\top = \ker \Lu k \) include at least \( \im B_{k+1}\) and \( \im B_{k+1}^\top \). As a result, the zero eigenvalue in the corresponding DoS and LDoS for both operators exhibits a dominating pick severely affecting the quality of KPM-approximation.
+the subspaces \( \ker B_k = \ker \Ld k \) and \( \ker B_{k+1}^\top = \ker \Lu k \) include at least \( \im B_{k+1}\) and \( \im B_{k+1}^\top \). As a result, the zero eigenvalue in the corresponding DoS and LDoS for both operators exhibits a dominating pick severely affecting the quality of KPM-approximation.\todo{do we need an illustration}
+
+\begin{remark}[Filtration of the kernels]
+      As given by the Hodge decomposition above, the most part of the peak in \( \Ld k \) is explained by the elements of \( \im B_{k+1}\). Then one can avoid the dominating kernel pick in the corresponding LDoS family \( \{ \mu_k( \lambda \mid \Ld k ) \) by filtering \( \im B_{k+1}\) out provided one can obtain an orthonormal basis of this subspace. As a result, the filtration of the kernel becomes the question of the efficient range finder of a sparse operator \( \im B_{k+1} \). Although we do not claim that computationally efficient range finder for such case does not exist, the majority of the methods at the current moment run into the bottleneck of the QR-decomposition which is far more computationally complex then one can allow in comparison with the straightforward computation of GER for \( \Lu k \).
+\end{remark}
