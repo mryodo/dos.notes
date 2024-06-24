@@ -93,7 +93,7 @@ Note that DoS \( \mu ( \lambda \mid A ) \) only describes the spectrum \( \sigma
 
 \section{ Chebyshev Approximation of DoS/LDoS }
 
-Let us assume we transition from symmetric \( A \) to a symmetric \( H \) such that \( \sigma(H) \subseteq [-1, 1 ]\), e.g. by \( H = \frac{2}{ \lambda_{\max{}} ( A ) } A - I \). This allows us to assume that \( \mathrm{supp}\, \mu( \lambda \mid H ) \subseteq [-1, 1]\) and it can be decomposed into an orthonormal basis on \( [-1, 1]\). 
+Let us assume we transition from symmetric matrix \( A \) to  \( H \) such that \( \sigma(H) \subseteq [-1, 1 ]\) and \( H = H^\top \), e.g. by \( H = \frac{2}{ \lambda_{\max{}} ( A ) } A - I \). This implies \( \mathrm{supp}\, \mu( \lambda \mid H ) \subseteq [-1, 1]\) and it can be decomposed into an orthonormal basis on \( [-1, 1]\). 
 
 Specifically, let \( T_m(x) \) be a family of Chebyshev polynomials of the first kind iff:
 \begin{equation}
@@ -122,19 +122,23 @@ with
 \end{equation}
 where each entry in \( \b z \) is i.i.d with zero mean and unit variance. 
 
-Note that due to the recurrent definition, \( d_m = \frac{1}{n} \ds E \left[ \b z^\top T_m(H) \b z \right] = \frac{1}{n} \ds E \left[ \b z^\top \left( 2 H T_{m-1}(H) - T_{m-2}(H) \right) \b z \right] \), the computation of \( d_m \) requires only \emph{one} new \texttt{matvec} computation for \( H T_{m-1}(H) \b z \) since estimations for \( T_{m-1}(H) \b z \) and \( T_{m-2}(H) \b z \) are inherited from \( d_{m-1} \) and \( d_{m-2}\). As a result, the computational cost of each new moment \( d_m \) is \( \mc O( \texttt{nnz}(H))\), and, assuming we use \( M \) moments in the decomposition, the overall complexity is \( \mc O \left( N_z M \texttt{nnz}(H)  \right)\).
+Note that due to the recurrent definition, \( d_m = \frac{1}{n} \ds E \left[ \b z^\top T_m(H) \b z \right] = \frac{1}{n} \ds E \left[ \b z^\top \left( 2 H T_{m-1}(H) - T_{m-2}(H) \right) \b z \right] \), the computation of \( d_m \) requires only \emph{one} new \texttt{matvec} computation for \( H T_{m-1}(H) \b z \) since estimations for \( T_{m-1}(H) \b z \) and \( T_{m-2}(H) \b z \) are inherited from \( d_{m-1} \) and \( d_{m-2}\). As a result, the computational cost of each new moment \( d_m \) is \( \mc O( \texttt{nnz}(H))\), and, assuming we use \( M \) moments in the decomposition, the overall complexity is \( \mc O \left( N_z M \texttt{nnz}(H)  \right)\). Similarly, in the case of LDoS, one new \texttt{matvec} operation yields not one \( d_{mk}\), but all the moments \( d_{m\cdot}\) since we obtain the complete diagonal of \( T_m(H) \).
 
-In the case of \( L_k \), we get \( \mc O \left( N_z M ( k m_k + (k+1)m_{k+1}) \right)\) either for DoS of LDoS.
+As a result, for  \( L_k \) we get the complexity of \( \mc O \left( N_z M ( k m_k + (k+1)m_{k+1}) \right)\) either for DoS of LDoS.
 
 \section{ Spike problems and filtration }
 
-Approximation via KPM has an unfortunate down-side: since it is a basis decomposition, a local failure (e.g. in the neibourhood of a a specific \( \lambda \) ) affects the approximation quality everywhere. Moreover, since \( T^*_m(x)\) are mostly polynomial, spikes in the spectral densities (i.e. associated with eigenvalues of high multiplicity) are poorly approximated in general. 
+Approximation via KPM has an unfortunate down-side: since it is a basis decomposition, a local failure (e.g. in the neibourhood of a a specific \( \lambda \) ) affects the approximation quality everywhere. Moreover, since \( T^*_m(x)\) are mostly (modulo multiplication by \( w(x) \)) polynomial, spikes in the spectral densities (i.e. associated with eigenvalues of high multiplicity) are poorly approximated in general. 
 
+\cite{dong2019network} discuss a possible improvement of the KPM approximation by filtering eigenvalues corresponding to the dominating spike in \( \mu( \lambda \mid H )\). Assume \( P \) contains orthogonal basis of the \(\lambda\)-eigenspace which generates the spike; then if \( Q = P^\perp \), than the matrix \( Q H Q^\top \) has the same spectrum as \( H \) without the filtered out multiple \( \lambda \)-eigenvalues. Moreover, one does not need to compute \( Q H Q^\top \) matrix; instead, one can use \( Q Q^\top \b z = ( I - P P^\top ) \b z \) in the sampling. This filtering idea, however requires the knowledge of the orthonormal basis of the eigenspace of high-multiplicity which can be both unavailable and expensive to compute. 
 
 
 
 
 \section{ Effects of the Hodge Decomposition }
+
+
+
 
 \chapter{ Sparsification of Simplicial Complexes }
 
@@ -179,6 +183,7 @@ The bottleneck of the subsampling above is the construction of the appropriate m
             \b r_i = \int_{\ds R } (1 - \ds 1_0(\lambda)) \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda 
       \end{equation}
 \end{thm}
+\todo{weighted egdges === BAD ?}
 \begin{proof}
       Let \( B_{k+1} W_{k+1} = U S V^\top\) where \( S \) is diagonal and invertible and both \( U \) and \( V \) are orthogonal (so it is a truncated SVD decomposition of \( B_{k+1} W_{k+1} \) matrix with eliminated obsolete kernel). Then:
       \begin{equation}
@@ -210,7 +215,51 @@ The bottleneck of the subsampling above is the construction of the appropriate m
 
 
 
+\chapter{ Case for \( \textcolor{white}{L_0} \) }
 
+If it works for \( L_0 \), it should work for every \( \Lu k \) even better (or, instead, it can be worse for \( k = 0 \), but better for \( k \ge 1 \)).
+
+We fight against \( \b r = \diag \left(  B_1^\top (L_0)^\dagger B_1 \right)\), so it is \( \mc O (m_0^3 )\) modulo mulitplication with \( B_1 \) (if it matters).\todo{there is no good sparse methods for \texttt{pinv}, how nice!}
+
+So, we instead want LDoS of \( \Ld 1 \), which is \( \mc O (N_z M m_1 )\), but has a problem with peaks. How much does it take to filter out peaks?
+
+We need an orthonormal basis of \( \ker \Ld 1 \) which is from \( \im B_2 \). In order to get \( B_2 \), we need \( \mc O( m_0 m_1 )\) and then we need to do \( \texttt{qr}\)-decomposition, which is \( \mc O (  m_1^2 m_2 ) \) at most (given the rank, it is \( \mc O ( (m_1 - m_0)^2 m_1 )\)). Then, it is \( \mc O ( (m_1 - m_0)^2 m_1  + m_0 m_1 + N_z M m_1 ) \) at most. 
+
+BAD
+
+We need a fast QR there...
+
+
+
+\chapter{ Kernel Ignoring Decomposition of LDoS }
+
+We have established that the sparsifying measure \( \b p \) for \( \Lu k \) can be defined in terms of the LDoS \( \{ \mu_k (\lambda \mid \Ld {k+1})  \} \) with the exclusion of the origin. At the same time, one can recall the Hodge Decomposition, \cite{Lim15}:
+\begin{equation}
+      \ds R^{m_k} = \lefteqn{\overbrace{\phantom{\im B_k^\top \oplus  \ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right)}}^{\ker B_{k+1}^\top}} \im B_k^\top \oplus
+      \underbrace{\ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right) \oplus  \im B_{k+1}}_{\ker B_k}            
+\end{equation}
+
+
+
+
+What if we just do not do this at all?
+
+\begin{definition}[Positive DoS and LDoS]
+      Let us consider a corrected DoS and LDoS:
+      \begin{equation}
+            \begin{aligned}
+                  \wh \mu( \lambda \mid A ) & = \frac{1}{n} \sum_{ \lambda_i \ne 0 } \delta \left( \lambda - \lambda_i \right) \\
+                  \wh \mu_k ( \lambda \mid A ) & = \sum_{ \lambda_i \ne 0 } \left| \b e_k^\top \b q_i \right|^2 \delta \left( \lambda - \lambda_i \right)
+            \end{aligned}
+      \end{equation} 
+\end{definition}
+
+\begin{remark}[Shifts and kernels]
+      It does not really make sense to move \( 0 \) into \( -1 \) in the decomposition. Instead, maybe we can just rescale our matrix onto \( [0 , 1 ]\)? E.g.
+      \begin{equation}
+            \Ld {k+1} \qquad \longrightarrow \qquad \frac{1}{\lambda_{\max{}}} \Ld {k+1}
+      \end{equation}
+\end{remark}
 
 
 
