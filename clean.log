@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.17)  16 SEP 2024 14:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.17)  16 SEP 2024 16:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1397,9 +1397,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\@ifnextchar' on input line 53.
 
 [3]
-Overfull \hbox (30.72038pt too wide) in paragraph at lines 98--100
-[]\T1/comfortaa/l/n/10 which as an or-thog-o-nal (with re-spect to the weight func-tion $[]\OML/cmbrm/m/it/11 w\OT1/cmbr/m/n/11 (\OML/cmbrm/m/it/11 x\OT1/cmbr/m/n/11 ) = []$[]\T1/comfortaa/l/n/10 )
+Overfull \hbox (37.84038pt too wide) in paragraph at lines 98--100
+[]\T1/comfortaa/l/n/10 which as an or-thonor-mal (with re-spect to the weight func-tion $[]\OML/cmbrm/m/it/11 w\OT1/cmbr/m/n/11 (\OML/cmbrm/m/it/11 x\OT1/cmbr/m/n/11 ) = []$[]\T1/comfortaa/l/n/10 )
  []
+
+
+LaTeX Font Warning: Font shape `T1/cmtl/l/n' undefined
+(Font)              using `T1/cmtl/m/n' instead on input line 113.
 
 Excluding 'comment' comment.) (./chapters/sparse.tex
 Missing character: There is no t in font nullfont!
@@ -1433,8 +1437,8 @@ Missing character: There is no g in font nullfont!
 Missing character: There is no i in font nullfont!
 Missing character: There is no n in font nullfont!
 Package hyperref Info: bookmark level for unknown thm defaults to 0 on input line 9.
-Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 33.
 [4]
+Package hyperref Info: bookmark level for unknown proof defaults to 0 on input line 33.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 62.
 ) (./chapters/kid.tex
 Missing character: There is no t in font nullfont!
@@ -1556,21 +1560,21 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `clean.out' has not changed.
-(rerunfilecheck)             Checksum: AA33E792AB639C69A86F44D36A63436C;2064.
+(rerunfilecheck)             Checksum: 325F3165A2F21D5745A3947F6EFF22AA;2065.
  ) 
 Here is how much of TeX's memory you used:
- 51009 strings out of 478268
- 1207307 string characters out of 5846347
- 1662260 words of memory out of 5000000
- 68230 multiletter control sequences out of 15000+600000
- 598344 words of font info for 131 fonts, out of 8000000 for 9000
+ 51014 strings out of 478268
+ 1207374 string characters out of 5846347
+ 1662250 words of memory out of 5000000
+ 68232 multiletter control sequences out of 15000+600000
+ 598658 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  114i,15n,118p,917b,1473s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/comfortaa/a_xu66hj.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Bold.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/aajohan/comfortaa/Comfortaa-Light.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbras10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/hfbright/hfbrsy9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on clean.pdf (8 pages, 258730 bytes).
+Output written on clean.pdf (8 pages, 263252 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 206 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 211 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 

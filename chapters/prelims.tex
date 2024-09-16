@@ -85,7 +85,7 @@ which correspond to discretized output of the convolution of spectral densities 
 %
 %      1. Chebyshev polynomials
 %      2. Moments sampling
-%      3. Approximation error estimations
+%      3. Approximation error estimations /// later
 %      4. Computational cost
 %      5 . Spikes and filtration /// later  
 %
@@ -96,10 +96,21 @@ Namely, let \( T_m(x)\) be Chebyhev polynomials of the first kind. Specifically,
 \begin{equation}
       T_0(x) = 1, \; T_1(x) = x, \qquad T_{m+1}(x) = 2x T_m(x) - T{m-1} (x)
 \end{equation}
-which as an orthogonal (with respect to the weight function \(w(x) = \frac{2}{(1+\delta_{0m}) \pi \sqrt{1-x^2}}\)) on \( [-1, 1 ]\). Let us transform the operator \( A \to H  \) such that \( \sigma(H) \in [-1, 1]\) (e.g. \( H = \frac{2}{\lambda_{\max{}}} A - I\)); then one can decompose ˝
+which as an orthonormal (with respect to the weight function \(w(x) = \frac{2}{(1+\delta_{0m}) \pi \sqrt{1-x^2}}\)) on \( [-1, 1 ]\). Let us transform the operator \( A \to H  \) such that \( \sigma(H) \in [-1, 1]\) (e.g. \( H = \frac{2}{\lambda_{\max{}}} A - I\)); then one can decompose 
+\begin{equation}
+      \mu( \lambda \mid A ) = \sum_{m=0}^\infty d_m w(\lambda)T_m(\lambda), \qquad       \mu_k( \lambda \mid A ) = \sum_{m=0}^\infty d_{mk} w(\lambda)T_m(\lambda) 
+\end{equation}
+Due to the orthonormality, 
+\begin{equation}
+      d_m = \left\langle \mu(\lambda \mid A ), T_m(x) \right\rangle = \sum_{\lambda_i \in \sigma(A)} T_m(\lambda_i) = \mathrm{tr} \, T_m(A), \quad d_{m\cdot} = \diag( T_m(A) )
+\end{equation}
+Note that instead of computing \( T_m(A) \) one can use Monte-Carlo estimations for the trace and diagonal, specifically:
+\begin{equation}
+      \mathrm{tr}\, X = \ds E \left[ \b z^\top X \b z \right], \qquad \mathrm{diag}\, X = \ds E \left[ \b z \odot X \b z \right], 
+\end{equation}
+where \( \b z \) is a vector of i.i.d. random variables with zero mean and unit variance. The MC-sampling reduces \( \mathrm{tr}\, T_m(A) \) and \( \diag ( T_m*(A))\) calculations to simple matvec operations which can be efficiently updates for the next values of \( m \) due to the recurrent definition of \( T_m(x)\). 
 
-
-
+KPM approximation of DoS/LDoS relies on two introduced errors: reduction of  the expansion to the finite sum of \( M \) terms and sampling of the moments \( d_m \). The computational cost of the approximation is then fixed to \( \mc O \left(  N_z M \texttt{nnz} (A) \right)\) where \( \mc O \left( \texttt{nnz} (A) \right)\) is the cost of a matvec operation for the operator \( A \).
 
 
 
