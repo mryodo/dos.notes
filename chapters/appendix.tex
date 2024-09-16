@@ -1,0 +1,35 @@
+
+\section{Appendix}
+
+\subsection{Simplicial complexes}
+
+\input{figures/simplicialcomplex.tex}
+
+
+\subsection{Proof of Theorem 1 }
+
+\begin{proof}
+      Let \( B_{k+1} W_{k+1} = U S V^\top\) where \( S \) is diagonal and invertible and both \( U \) and \( V \) are orthogonal (so it is a truncated SVD decomposition of \( B_{k+1} W_{k+1} \) matrix with eliminated obsolete kernel). Then:
+      \begin{equation}
+            ( \Lu k )^\dagger = \left( B_{k+1} W_{k+1}^2 B_{k+1}^\top \right)^\dagger = \left( U S^2 U^\top \right)^\dagger = U S^{-2} U^\top
+      \end{equation}
+      \begin{equation}
+            \begin{aligned}
+                  \b r & = \diag \left( W_{k+1} B_{k+1}^\top ( \Lu k )^\dagger B_{k+1} W_{k+1} \right)  =  \\
+                  & = \diag \left(  V S U^\top U S^{-2} U^\top U S V^\top \right) = \diag \left(  V V^\top \right)
+            \end{aligned}
+      \end{equation}
+      As a result, \( \b r_i = \| V_{ i \cdot } \|^2 = \sum_j | v_{ij} |^2  \), so the \(i\)-th entry of the resistance is defined by the sum of square of \(i\)-th components of eigenvectors \( \b v_j \) of \( \Ld {k+1} = W_{k+1} B_{k+1}^\top B_{k+1} W_{k+1} \) operator where \( \b v_j \perp \ker \Ld {k+1} \).
+
+      Note that 
+      \begin{equation}
+            \mu_i ( \lambda \mid \Ld {k+1} ) = \sum_{j=1}^{m_{k+1}} \left| \b e_i^\top \b q_j \right|^2 \delta \left( \lambda - \lambda_j \right)  = \sum_{j=1}^{m_{k+1}} \left| q_{ij} \right|^2 \delta \left( \lambda - \lambda_j \right) 
+      \end{equation}
+      so 
+      \begin{equation}
+            \begin{aligned}
+                  \b r_i & = \| V_{ i \cdot } \|^2 = \sum_j | v_{ij} |^2 = \int_{ \ds R \backslash \{ 0 \} }  \sum_{j=1}^{m_{k+1}} \left| q_{ij} \right|^2 \delta \left( \lambda - \lambda_j \right)  d\lambda =\\
+                  & = \int_{ \ds R \backslash \{ 0 \} } \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda = \int_{\ds R } (1 - \ds 1_0(\lambda)) \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda
+            \end{aligned}
+      \end{equation}
+\end{proof}

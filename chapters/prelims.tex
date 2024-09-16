@@ -7,6 +7,47 @@
 %    + _???_ spectral inheritance _???_
 %
 
+\paragraph{Simplicial complexes}
+
+Let \( V = \{ v_1, \dots v_{m_0} \} \) be the set of nodes. Each subset of nodes \( \sigma = \{ v_{i_1}, \dots v_{i_k} \} \) is known as \emph{simplex} of order \( k - 1 \) with all its maximal proper subsets knowns as \emph{faces} of \( \sigma \). Then a collection of simplices \( \mc K \) is a \emph{simplicial complex} if and only if each simplex \( \sigma \) enters \( \mc K \) with all its faces (inclusion rule). As a result, each simplicial complex can be written as a collections of simplices of fixed orders, \( \mc K = \left\{ \V 0, \V 1, \V 2, \dots \right\} \) where \( \V 0 \) is a set of \(0\)-simplices (nodes), \( \V 1 \) is a set of edges, \( \V 2 \) of triangles, and so on, with \( m_k = | \V k | \) denoting the number of simplices in the corresponding set.
+
+\paragraph{ Boundary operators and Laplacians }
+
+Due to the inclusion principle, simplices inside \( \mc K \) form a nested structure through boundary relation; specifically, one can map a \( k \)-order simplex to a collection of \( (k-1)\)-order simplices on its border. Formally, let \( \mc C_k  \) be a linear space of all formal sums of simplices in \( \V k \); then the boundary map \( B_k \) is defined as an alternating sum:
+\begin{equation}
+      B_k : \mc C_k \mapsto \mc C_{k-1}, \qquad B_k [ v_1, v_2, \ldots v_k ] = \sum_{i=1}^k (-1)^{i-1} [ v_1, \ldots v_{i-1}, v_{i+1}, \ldots v_k ] 
+\end{equation}
+such that boundary of a boundary is \( 0 \), \( B_k B_{k+1} = 0 \), (fundamental lemma of homology). Provided one fixes an order of simplices and their orientation (lexicographically, so the simplicity's sake), one can define the following entities describing the higher-order structure of \( \mc K \):
+\begin{definition}[Homology group and higher-order Laplacian]
+      Since \( \im B_{k+1} \subset \ker B_k \), the quotient space \( \mc H_k =  \sfrac{ \ker B_k }{ \im B_{k+1}} \), known as \( k\)-th homology group, is correctly defined and the following isomorphisms hold 
+\begin{equation*}
+            \mc H_k \cong \ker B_k \cap \ker B_{k+1}^\top \cong \ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right).
+      \end{equation*}
+
+      The matrix \( L_k = B_k^\top B_k + B_{k+1} B_{k+1}^\top \) is called the \(k\)-th order \emph{Laplacian operator}; the two terms \( \Ld k =  B_k^\top B_k \) and \( \Lu k = B_{k+1} B_{k+1}^\top \) are referred to as the \emph{down-Laplacian} and the \emph{up-Laplacian}, respectively.
+\end{definition}
+The homology group \( \mc H_k \) describes the \(k\)-th topology of the simplicial complex \( \mc K \): \( \beta_k = \dim \mc H_k = \dim \ker L_k \)  coincides exactly with the number of \(k\)-dimensional holes in the complex, known as the \emph{ \(k\)-th Betti number}. In the case \( k = 0 \), the operator \( L_0 = \Lu 0\) is exactly the classical graph Laplacian whose kernel corresponds to the \textit{connected components} of the graph, while \( \Ld 0  = 0 \). For \( k = 1 \) and \( k = 2\), the elements of \( \ker L_1 \) and \( \ker L_2\) describe the simplex 1-dimensional holes and voids respectively, and are frequently used in the analysis of trajectory data,~\cite{schaub2019random,benson2016higher}. \todo{redo}
+
+\paragraph{ Weighted case and spectral structures }
+
+Considering weighted generalization of simplicial complexes, one needs to preserve the fundamental lemma of homology, \( B_k B_{k+1} = 0 \). As a result, let us assume the collection of weight matrices \( W_k \in \ds R_{m_k \times m_k} \) such that  \( W_k \) is diagonal with each \( (W_k)_{ii} > 0 \) containing the weight of the \(i\)-the simplex in \( \V k \). Then a generic weighting scheme for boundary operators can be written as:
+\begin{equation}
+      B_k \mapsto W_{k-1}^{-1} B_k W_k
+\end{equation}
+Note that with such weighting scheme the dimensionality of the homology group is preserved, \( \dim \ker L_k = \dim \ker \widehat L_k \),~\cite{guglielmi2023quantifying}.
+
+At each order \( k \), weighted boundary operators \( B_k \) define the space decomposition (Hodge decomposition):
+\begin{equation}
+      \ds R^{m_k} = \lefteqn{\overbrace{\phantom{\im B_k^\top \oplus  \ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right)}}^{\ker B_{k+1}^\top}} \im B_k^\top \oplus
+      \underbrace{\ker \left( B_k^\top B_k + B_{k+1} B_{k+1}^\top \right) \oplus  \im B_{k+1}}_{\ker B_k}            
+\end{equation}
+implying that that kernels of up- and down-Laplacians are necessarily non-trivial and high-dimensional, \( \ker \Ld k \supseteq \im B_{k+1} \) and \( \ker \Lu k \subseteq \im B_k^\top \). More explicit relation between these subspaces is known as a principle spectral inheritance, \cite{guglielmi2023quantifying}.
+
+% Let \( V = \{ v_1, \dots v_{m_0} \} \) be the set of nodes in the system; each its subset \( \sigma = \{ v_{i_1}, \dots v_{i_k} \} \subseteq V \) of cardinality \( k \) is referred to as a \emph{simplex} of order \( k - 1 \). The collection \( \mc k \) of simplices on the node set \( V \) is known as a \emph{simplicial complex} if and only if each simplex \( \sigma \) enters it with all its faces (for each \( \sigma' \subseteq \sigma \), \( \sigma' \in \mc K \)). We denote the set of simplices of order \( k \) in \( \mc K \) by \( \V k \), \( \mid \V k | = m_k \); then, any simplicial complex can be thought of as a collection of sets of simplices of \( 0\)-order (nodes), \( 1\)-order (edges), \( 2\)-order (triangles), and so on, \( \mc K = \left\{ \V 0, \V 1, \V 2 \dots \right\}\).
+
+%The face inclusion principle implies the nested structure on \( \V k \); due to it, one can define boundary operators \( B_k : \V k \mapsto \V {k-1} \) mapping simplices to the formal sum of simplices on its boundary. Formally,    
+
+%\input{figures/simplicialcomplex.tex}
 
 
 \section{ Networks' Density of States, \cite{dong2019network} }
@@ -14,6 +55,12 @@
 %    1. General Density of States
 %    2. Local Density of States
 %    3. Histogram
+
+\paragraph{ Spectral densities }
+
+As we established above, the spectral structure of the higher-order Laplacian operators carry meaningful information of the complex's topological structure, YADA YADA \todo{ the usual song}
+
+At the same time, the overall cost of extracting full spectral information from corresponding Laplacian operators \( L_k \) is computationally expensive with a complexity \( \mc O ( m_k^3 ) \). Instead, one can consider the following functional description:
 
 \begin{definition}[Density of States]
       Fro a given symmetric matrix \( A = Q \Lambda Q^\top \) with \( Q^\top Q = I \) and diagonal \( \Lambda = \diag \left( \lambda_1, \dots \lambda_{n} \right) \), the \emph{spectral density} or \emph{density of states} (DoS)
@@ -26,19 +73,30 @@
       \end{equation}
       with \( \b e_k \) being the corresponding versor. 
 \end{definition}
+Here DoS function \( \mu( \lambda \mid A ) \) contains the overall spectrum of the operator \( A \) while the family of LDoS \( \mu_k ( \lambda \mid A )\) describe the contribution of the simplex \( \sigma_k \in \V k \) to the spectral information.
 
+Finally, one should note that by its definition DoS and LDoS  are generalized functions, hence the quality of their computation is difficult to assess directly; instead, one considers its histogram representations:
+\begin{equation}
+    h_i = \int_{x_i}^{x_i+\Delta_x} \mu( \lambda \mid A ) d\lambda, \qquad h^{(k)}_i = \int_{x_i}^{x_i+\Delta_x} \mu_k( \lambda \mid A ) d\lambda 
+\end{equation}
+which correspond to discretized output of the convolution of spectral densities with a smooth approximation of identity function \( K_{\Delta h} \), \( \left[ \mu(\lambda \mid A ) * K_{\Delta h }  \right]\).
 
-\section{ Kernel Polynomial Method (KPM) }
+\paragraph{ Kernel Polynomial Method (KPM) }
 %
 %      1. Chebyshev polynomials
 %      2. Moments sampling
 %      3. Approximation error estimations
 %      4. Computational cost
-%      5. Spikes and filtration
+%      5 . Spikes and filtration /// later  
 %
 
+By its very definition, the introduction of the spectral densities \( \mu(\lambda \mid L_k ) \) and \( \left\{ \mu_k(\lambda \mid A ) \right\}\) requires the complete spectral information of the original operator \( L_k \) and, hence, is not immediately computationally more efficient. At the same time, one can use the functional nature of DoS and LDoS to obtain approximation through expansion.
 
-
+Namely, let \( T_m(x)\) be Chebyhev polynomials of the first kind. Specifically,
+\begin{equation}
+      T_0(x) = 1, \; T_1(x) = x, \qquad T_{m+1}(x) = 2x T_m(x) - T{m-1} (x)
+\end{equation}
+which as an orthogonal (with respect to the weight function \(w(x) = \frac{2}{(1+\delta_{0m}) \pi \sqrt{1-x^2}}\)) on \( [-1, 1 ]\). Let us transform the operator \( A \to H  \) such that \( \sigma(H) \in [-1, 1]\) (e.g. \( H = \frac{2}{\lambda_{\max{}}} A - I\)); then one can decompose ˝
 
 
 
