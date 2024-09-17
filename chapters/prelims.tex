@@ -94,7 +94,7 @@ By its very definition, the introduction of the spectral densities \( \mu(\lambd
 
 Namely, let \( T_m(x)\) be Chebyhev polynomials of the first kind. Specifically,
 \begin{equation}
-      T_0(x) = 1, \; T_1(x) = x, \qquad T_{m+1}(x) = 2x T_m(x) - T{m-1} (x)
+      T_0(x) = 1, \; T_1(x) = x, \qquad T_{m+1}(x) = 2x T_m(x) - T_{m-1} (x)
 \end{equation}
 which as an orthonormal (with respect to the weight function \(w(x) = \frac{2}{(1+\delta_{0m}) \pi \sqrt{1-x^2}}\)) on \( [-1, 1 ]\). Let us transform the operator \( A \to H  \) such that \( \sigma(H) \in [-1, 1]\) (e.g. \( H = \frac{2}{\lambda_{\max{}}} A - I\)); then one can decompose 
 \begin{equation}
@@ -102,7 +102,7 @@ which as an orthonormal (with respect to the weight function \(w(x) = \frac{2}{(
 \end{equation}
 Due to the orthonormality, 
 \begin{equation}
-      d_m = \left\langle \mu(\lambda \mid A ), T_m(x) \right\rangle = \sum_{\lambda_i \in \sigma(A)} T_m(\lambda_i) = \mathrm{tr} \, T_m(A), \quad d_{m\cdot} = \diag( T_m(A) )
+      d_m = \left\langle \mu(\lambda \mid A ), T_m(x) \right\rangle = \sum_{\lambda_i \in \sigma(A)} T_m(\lambda_i) = \mathrm{tr} \, T_m(A), \quad d_{m\bullet} = \diag( T_m(A) )
 \end{equation}
 Note that instead of computing \( T_m(A) \) one can use Monte-Carlo estimations for the trace and diagonal, specifically:
 \begin{equation}

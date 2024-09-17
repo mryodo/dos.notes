@@ -19,6 +19,15 @@
 The bottleneck of the subsampling above is the construction of the appropriate measure \( \b p \) or, more precisely, generalized effective resistance \( \b r \). Indeed, one needs a fast pseudo-inverse operator \( \left(  \Lu k \right)^\dagger \) in order to compute \( \b r \).
 
 
+\begin{remark}[Sensitivity of the Sparsification vis-a-vis sampling measure \( \b p \)]
+      Since \( \b p \) is a probability measure on \( m_{k+1} \) simplices, it is natural consider size of its perturbation in terms of \( \frac{1}{m_{k+1}}\).
+\end{remark}
+
+
+
+
+
+
 
 \todo{we need to assume somewhere \( W_k = I \) for simplicity and do not forget about it}
 
@@ -28,6 +37,7 @@ The bottleneck of the subsampling above is the construction of the appropriate m
             \b r_i = \int_{\ds R } (1 - \ds 1_0(\lambda)) \mu_i ( \lambda \mid \Ld {k+1} ) d\lambda 
       \end{equation}
 \end{thm}
+\begin{comment}
 \todo{weighted egdges === BAD ?}
 \begin{proof}
       Let \( B_{k+1} W_{k+1} = U S V^\top\) where \( S \) is diagonal and invertible and both \( U \) and \( V \) are orthogonal (so it is a truncated SVD decomposition of \( B_{k+1} W_{k+1} \) matrix with eliminated obsolete kernel). Then:
@@ -54,13 +64,7 @@ The bottleneck of the subsampling above is the construction of the appropriate m
             \end{aligned}
       \end{equation}
 \end{proof}
+\end{comment}
 
 
 
-
-
-\begin{remark}[Sensitivity of the Sparsification vis-a-vis sampling measure \( \b p \)]
-      Compare \( \eps \) with \( \frac{1}{m_2}\): if below, you are fiiiiiiine
-
-      INSERT FIGURE HERE
-\end{remark}
